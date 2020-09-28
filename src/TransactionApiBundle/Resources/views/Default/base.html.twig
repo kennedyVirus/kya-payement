@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {#<title>{% if title is defined %} {{ title }}  {% else %} KYA SOL DESIGN{% endif %}</title>#}
+    <title>KYA SOL DESIGN</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="{{ asset('assets/css/materialize.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('assets/css/progress-wizard.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/vue-form-wizard.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/buefy.min.css') }}">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.css" integrity="sha256-KpQHAI/AubL4JrO3VYskOgqSm+Z9nzrIqWB1dTOfCK4=" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://unpkg.com/materialize-stepper@3.1.0/dist/css/mstepper.min.css">
+    <script type="text/javascript"  src="{{ asset('assets/js/jquery-3.1.1.min.js') }}"></script>
+
+
+    <script type="text/javascript"  src="{{ asset('assets/js/vue.min.js') }}"></script>
+
+    <script type="text/javascript"  src="{{ asset('assets/js/axios.js') }}"></script>
+
+    {% block jvscriptbox %}
+    {% endblock %}
+
+
+    <style>
+        a.notif {
+            position: relative;
+            display: block;
+            height: 50px;
+            width: 50px;
+            background-size: contain;
+            text-decoration: none;
+        }
+        .num {
+            position: absolute;
+            right: 16px;
+            bottom: -4px;
+            color: #fff;
+        }
+        li.link {
+            margin-left: -1em;
+        }
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            font-family: 'Open Sans', sans-serif;
+            background-color: whitesmoke;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+        img{
+            object-fit: cover;
+        }
+        @media only screen and (min-width: 993px)
+        nav a.button-collapse {
+            display: none;
+        }
+            a.text-logo {
+                height: 20%;
+                font-size: 2em;
+            }
+            .modal.full {
+                width: 90vw;
+            }
+            .helper-text{
+                font-size: smaller;
+                margin-top: 0%;
+                color: red;
+            }
+            .page-footer{
+                padding-top: 0!important;
+            }
+
+            footer .footer-copyright {
+                height: 6em!important;
+            }
+            #modal-loader{
+                background: url('{{ asset('assets/loader/Spinner-1s-95px.gif') }}') no-repeat center;
+                background-color: unset;
+                -webkit-box-shadow: none!important;
+                box-shadow: none!important;
+            }
+            .btn{
+                background-color: #CB1641;
+            }
+            .btn:hover {
+                background-color: #CB1641;
+            }
+            .icons{
+                margin-left: 1em !important;
+                /*margin-right: 1em !important;*/
+            }
+    </style>
+
+    {% block additionnalcss %}
+    {% endblock %}
+
+    {% block additionnaljs %} {% endblock %}
+</head>
+<body>
+<div id="modal-loader" class="modal loader modal-fixed-footer">
+    <div class="modal-content">
+    </div>
+</div>
+
+<header>
+
+    <div class="navbar-fixed">
+        <nav style=" background-color: #fbfbfb">
+            <div class="row nav-wrapper">
+                <div class="col s3 m3 l3" >
+                    {#<ul class="left">#}
+                    {#<li><a data-activates="slide-out" class="my-btn" href="#" style="padding-left: 0!important"><i class="material-icons">menu</i></a></li>#}
+                    {#</ul>#}
+                    <span style="padding-left: 0;margin-left: 0">
+                         {#<a class="text-logo" style="color: #009a86">KYA SOL DESIGN</a>#}
+                        <a class="brand-logo" href="">
+                            <img  src="{{ asset('assets/img/logo/logo2.jpeg') }}" class="logo" style="width:2em;height: 2em">
+                        </a>
+                    </span>
+                </div>
+                <div class="right" style="padding-top: 1em">
+
+                    <div class="col s1 m1 l1 offset-s2 offset-m2 offset-l2 " >
+                        <a href="http://www.fb.com/KEG.TG">
+                            <img src="{{ asset('assets/img/facebook.png') }}">
+                        </a>
+                    </div>
+                    <div class="col s1 m1 l1 icons">
+                        <a href="https://www.linkedin.com/company/kya-energy-group">
+                            <img src="{{ asset('assets/img/linkdein.png') }}">
+                        </a>
+                    </div>
+                    <div class="col s1 m1 l1 icons">
+                        <a href="https://www.instagram.com/keg.tg/">
+                            <img src="{{ asset('assets/img/instagram.png') }}">
+                        </a>
+                    </div>
+                    <div class="col s1 m1 l1 icons">
+                        <a href="https://twitter.com/KyaGroup">
+                            <img src="{{ asset('assets/img/twitter.png') }}">
+                        </a>
+                    </div>
+                    <div class="col s1 m1 l1 icons">
+                        <a href="https://kya-energy.tumblr.com/">
+                            <img src="{{ asset('assets/img/tmbd.png') }}">
+                        </a>
+                    </div>
+                    <div class="col s1 m1 l1 icons">
+                        <a href="https://www.youtube.com/channel/UC_7TIwBfk9JJO-sgGTXCpqg">
+                            <img src="{{ asset('assets/img/youtube.png') }}">
+                        </a>
+                    </div>
+                </div>
+                {#<div class="col s1" style="margin-left: 0;padding-left: 0">#}
+                {#<a href="{{ path('admin_discussion_page') }}" class="notif" ><i class="material-icons" style="color: black">notification_important</i> <span class="num"></span></a>#}
+                {#</div>#}
+                {#<div class="col s7 m7 l7 center">#}
+                {#<span style="color:white;height:20%;font-size:2em;font-weight: bold;font-family: cursive" class="text-logo">{% block page_title %}{% endblock %}</span>#}
+                {#</div>#}
+                {#<div class="col s1 m1 l1 offset-s1 offset-m1 offset-l1">#}
+                {#<span class="badge white  commands " style="margin-top:2em;color: black;font-weight: bold;margin-right: 2em" title="Toutes les commandes de la journée">#}
+                {#</span>#}
+                {#</div>#}
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- / NavBar and SideNav -->
+
+
+<main>
+    <div class="container">
+        {% block mainpage %}
+        {% endblock %}
+    </div>
+</main>
+
+<!-- Footer -->
+
+{#<footer class="page-footer" style="width: 100%; background-color: #CB1641">#}
+{#<div class="footer-copyright">#}
+{#<div class="container">#}
+{#Copyright © 2018-2019 Kaba. Tous droits Reservés.#}
+{#<a class="grey-text text-lighten-4 right" href="#!">À Propos de Nous</a>#}
+{#</div>#}
+{#</div>#}
+{#</footer>#}
+
+<!-- / Footer -->
+
+{#<script src="{{ asset('assets/js/materialize.min.js') }}"></script>#}
+<script type="text/javascript"  src="{{ asset('assets/js/vue-form-wizard.js') }}"></script>
+<script type="text/javascript"  src="{{ asset('assets/js/buefy.min.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.js" integrity="sha256-Pqs5A9wApIiYSB4hUcVldLk59gXaGnttbDmxVjRm6zQ=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
+    {% block afterMaterializejs %} {% endblock %}
+    </body>
+    </html>

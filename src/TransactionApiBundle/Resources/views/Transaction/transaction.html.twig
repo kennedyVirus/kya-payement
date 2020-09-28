@@ -1,0 +1,186 @@
+{% extends 'TransactionApiBundle:Default:base.html.twig' %}
+
+
+    {% block additionnalcss %}
+
+        <style>
+
+        </style>
+
+    {% endblock %}
+
+
+    {#{% block page_title %}Tableau de Bord {% endblock %}#}
+
+{% block mainpage  %}
+<div id="app">
+    <div>
+        <form-wizard color="#3498db" @on-complete="onComplete" finish-button-text="Soumettre" back-button-text="Précédent" next-button-text="Suivant">
+            <tab-content :before-change="validateFirstStep" title="Infos Personnelles" icon="ti-user">
+
+                <!--  <b-field label="Choix du pack">
+          <b-select placeholder="Choisissez un pack" v-model="selected_pack">
+            <option v-for="pack in packs" :value="pack.id" :key="pack.id">
+              {#{{ pack.label }}#}
+            </option>
+          </b-select>
+        </b-field> -->
+
+                <b-field grouped position="is-centered">
+                    <b-field label="Nom">
+                        <b-input v-model="last_name" required></b-input>
+                    </b-field>
+
+                    <b-field label="Prénom" expanded>
+                        <b-input v-model="first_name" required></b-input>
+                    </b-field>
+                </b-field>
+
+
+                <b-field grouped position="is-centered">
+                    <template>
+                        <b-field label="Email" v-if="selected_pack===1">
+                            <b-input v-model="email" :required="'selected_pack===1'" type="email"></b-input>
+                        </b-field>
+                        <b-field label="Numéro de téléphone" v-else>
+                            <b-input v-model="phone_number" :required="'selected_pack===2'"></b-input>
+                        </b-field>
+                    </template>
+
+                    <b-field label="Profession" expanded>
+                        <b-input v-model="job_title" required></b-input>
+                    </b-field>
+
+                </b-field>
+
+
+
+            </tab-content>
+
+            <tab-content :before-change="validateSecondStep" title="Infos supplémentaires" icon="ti-settings">
+
+
+                <b-field grouped position="is-centered">
+                    <b-field label="Pays">
+                        <b-input v-model="country" required></b-input>
+                    </b-field>
+
+                    <b-field label="Ville">
+                        <b-input v-model="city" required></b-input>
+                    </b-field>
+                    <b-field label="Addresse">
+                        <b-input v-model="address" required></b-input>
+                    </b-field>
+                </b-field>
+
+
+                <b-field grouped position="is-centered">
+
+                    <b-field grouped>
+                        <b-checkbox v-model="organization">
+                            Etes-vous une Entreprise ?
+                        </b-checkbox>
+                    </b-field>
+                </b-field>
+
+
+
+            </tab-content>
+
+            <tab-content title="Valider" icon="ti-check">
+
+                <b-field grouped position="is-centered">
+                    <b-field label="Nom">
+                        <b-input v-model="last_name" disabled icon="user"></b-input>
+                    </b-field>
+
+                    <b-field label="Prénom">
+                        <b-input v-model="first_name" disabled></b-input>
+                    </b-field>
+
+                    <b-field label="Email">
+                        <b-input v-model="first_name" disabled></b-input>
+                    </b-field>
+
+                </b-field>
+
+                <b-field grouped>
+                    <b-field label="Pays">
+                        <b-input v-model="country" disabled></b-input>
+                    </b-field>
+
+                    <b-field label="Ville">
+                        <b-input v-model="city" disabled></b-input>
+                    </b-field>
+
+                    <b-field label="Addresse">
+                        <b-input v-model="address" disabled></b-input>
+                    </b-field>
+
+                </b-field>
+
+            </tab-content>
+        </form-wizard>
+    </div>
+</div>
+{% endblock %}
+
+{% block additionnaljs %}
+
+<script type="text/javascript">
+    Vue.use(VueFormWizard)
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                packs: [{
+                    id: 1,
+                    label: 'Pack Entreprise'
+                },
+                    {
+                        id: 2,
+                        label: 'Pack Etudiant'
+                    }
+                ],
+                selected_pack: 1,
+                organization: false,
+                last_name: '',
+                first_name: '',
+                country: '',
+                address: '',
+                city: '',
+                phone_number: '',
+                email: '',
+                organisation: '',
+                job_title: ''
+            }
+        },
+        methods: {
+            validateFirstStep() {
+                return this.last_name !== '' && this.first_name !== '' && this.job_title !== ''
+            },
+            validateSecondStep(){
+                return true;
+            },
+            onComplete() {
+
+                let data = {
+                    first_name,
+                    last_name,
+                    address,
+                    city,
+                    country,
+                    email,
+                    job_title,
+                    organization
+                };
+
+                // REQUETE HTTP AXIOS
+                /* let result = axios.post() */
+            }
+        }
+    })
+
+</script>
+{% endblock %}
+

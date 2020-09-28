@@ -1,0 +1,13 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: kyaenergtjpay.mysql.db
+    database_port: null
+    database_name: kyaenergtjpay
+    database_user: kyaenergtjpay
+    database_password: Kyapay2020
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: jfkvirus@gmail.com
+    mailer_password: kosmos@2015
+    secret: ThisTokenIsNotSoSecretChangeIt
+
