@@ -1,9 +1,9 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: kyaenergtjpay.mysql.db
+    database_host: kyaenergtjkyapay.mysql.db
     database_port: null
-    database_name: kyaenergtjpay
-    database_user: kyaenergtjpay
+    database_name: kyaenergtjkyapay
+    database_user: kyaenergtjkyapay
     database_password: Kyapay2020
     mailer_transport: smtp
     mailer_host: 127.0.0.1
