@@ -35,9 +35,12 @@ class TransactionController extends BaseController
 
     public function initPaygatePaymentAction(Request $request) {
 
+
+
         $json_data = $request->getContent();
         $data = json_decode($json_data,true);
         $url='';
+
 
         $amount=0;
 

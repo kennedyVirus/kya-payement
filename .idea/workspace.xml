@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1c22a81-b802-45f3-8fb4-d9f0fff9bc90" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/web/assets/js/pay-transaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/pay-transaction.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TransactionController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TransactionController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
-              <caret line="156" column="48" selection-start-line="156" selection-start-column="48" selection-end-line="156" selection-end-column="48" />
+            <state relative-caret-position="206">
+              <caret line="161" column="31" lean-forward="true" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
               <folding>
                 <element signature="e#51#91#0#PHP" expanded="true" />
               </folding>
@@ -31,8 +32,8 @@
       <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-654">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="22" />
+            <state relative-caret-position="169">
+              <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
                 <element signature="e#6336#7574#0#PHP" />
@@ -67,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pay-transaction.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pay-transaction.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/assets/js/pay-transaction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="223" column="16" lean-forward="true" selection-start-line="223" selection-start-column="16" selection-end-line="223" selection-end-column="16" />
+            <state relative-caret-position="226">
+              <caret line="260" column="39" lean-forward="true" selection-start-line="260" selection-start-column="39" selection-end-line="260" selection-end-column="39" />
               <folding>
                 <element signature="e#2675#2697#0" />
                 <element signature="e#4871#4903#0" />
@@ -134,8 +135,8 @@
       <find>btn-buy</find>
       <find>logo</find>
       <find>d</find>
-      <find>transaction_</find>
       <find>submitStudentForm</find>
+      <find>transaction_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,13 +172,13 @@
         <option value="$PROJECT_DIR$/web/app_dev.php" />
         <option value="$PROJECT_DIR$/web/asset/assets/css/style.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" />
         <option value="$PROJECT_DIR$/web/assets/js/pay-form.js" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
         <option value="$PROJECT_DIR$/web/assets/css/pay-form.css" />
         <option value="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig" />
         <option value="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/js/pay-transaction.js" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
+        <option value="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" />
       </list>
     </option>
   </component>
@@ -446,12 +447,12 @@
       <updated>1601211876935</updated>
       <workItem from="1601211879154" duration="23577000" />
       <workItem from="1601300373934" duration="6240000" />
-      <workItem from="1601324795526" duration="25474000" />
+      <workItem from="1601324795526" duration="26767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55291000" />
+    <option name="totallyTimeSpent" value="56584000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -745,25 +746,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php">
+    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-654">
-          <caret line="17" column="22" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="22" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-            <element signature="e#6336#7574#0#PHP" />
-            <element signature="e#9460#10026#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="156" column="48" selection-start-line="156" selection-start-column="48" selection-end-line="156" selection-end-column="48" />
-          <folding>
-            <element signature="e#51#91#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="232">
+          <caret line="151" column="83" lean-forward="true" selection-start-line="151" selection-start-column="83" selection-end-line="151" selection-end-column="83" />
         </state>
       </provider>
     </entry>
@@ -790,22 +776,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="151" column="83" lean-forward="true" selection-start-line="151" selection-start-column="83" selection-end-line="151" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/js/pay-transaction.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="223" column="16" lean-forward="true" selection-start-line="223" selection-start-column="16" selection-end-line="223" selection-end-column="16" />
+        <state relative-caret-position="226">
+          <caret line="260" column="39" lean-forward="true" selection-start-line="260" selection-start-column="39" selection-end-line="260" selection-end-column="39" />
           <folding>
             <element signature="e#2675#2697#0" />
             <element signature="e#4871#4903#0" />
             <element signature="e#5070#7188#0" />
             <element signature="e#7230#9345#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#6336#7574#0#PHP" />
+            <element signature="e#9460#10026#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="161" column="31" lean-forward="true" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="31" />
+          <folding>
+            <element signature="e#51#91#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

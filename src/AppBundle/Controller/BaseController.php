@@ -372,14 +372,14 @@ class BaseController extends Controller
             $dat["clientId"]=$temp_client->getId();
 
             return $dat;
+        }else{
+            $dat=[];
+            $dat["status"]=false;
+            $dat["clientId"]=null;
 
-
+            return $dat;
         }
-        $dat=[];
-        $dat["status"]=false;
-        $dat["clientId"]=null;
 
-        return $dat;
     }
 
 
