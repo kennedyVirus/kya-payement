@@ -52,7 +52,7 @@ class BaseController extends Controller
 
     const SMS_ZEDEKA_CLIENT_ID="54911dcd-e69c-4030-9328-4b848c64c4db";
 
-    const SMS_ZEDEKA_SENDER="KYA_ENERGY_GROUP";
+    const SMS_ZEDEKA_SENDER="KYA";
 
     const KYA_STUDENT_AMOUNT_DAY=1000;
     const KYA_STUDENT_AMOUNT_WEEK=5000;
