@@ -13,7 +13,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use SysSecurityBundle\Entity\LicenceKey;
 use SysSecurityBundle\Entity\Verification;
-require('../vendor/paydunya-php-master/paydunya.php');
+use Paydunya;
+use Paydunya_Checkout_Invoice;
+//require('../vendor/paydunya-php-master/paydunya.php');
+
+require ('../vendor/paydunya-php-master/paydunya.php');
 
 
 class TransactionController extends BaseController
@@ -243,7 +247,7 @@ class TransactionController extends BaseController
         \Paydunya_Checkout_Store::setLogoUrl("http://www.kya-energy.com/logo.png");
         \Paydunya_Checkout_Store::setCallbackUrl("http://www.pay.kya-energy.com/8004064b17546e4380ce83d1be75b50dkfj/api/kya/paydunya/payment/confirm");
 
-        $invoice=new \Paydunya_Checkout_Invoice();
+        $invoice=new Paydunya_Checkout_Invoice();
         $invoice->addChannel('card');
         $invoice->setDescription($description);
         $invoice->setTotalAmount($amount);
