@@ -177,6 +177,7 @@
                             <ul style="list-style: square">
                                 <li>1000  xof valable jour</li>
                                 <li>5000 xof valable 1 semaine</li>
+                                <li>15000 xof valable 1 mois</li>
                             </ul>
                             <div class="btn-wrap">
                                 {#<a @click="openPay3Modal()" class="btn-buy">Acheter</a>#}
@@ -222,132 +223,135 @@
             </div>
         </section><!-- End Pricing Section -->
 
-        <div class="modal fade" id="enterpriseModal" tabindex="-1" role="dialog" aria-labelledby="enterpriseModalLabel" aria-hidden="true">
+        {#<div class="modal fade" id="enterpriseModal" tabindex="-1" role="dialog" aria-labelledby="enterpriseModalLabel" aria-hidden="true">#}
 
-            <div class="modal-dialog modal-dialog-centered modal-lg " role="document">
-                <div class="modal-content ">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="">License Commerciale</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
+            {#<div class="modal-dialog modal-dialog-centered modal-lg " role="document">#}
+                {#<div class="modal-content ">#}
+                    {#<div class="modal-header">#}
+                        {#<h5 class="modal-title" id="">License Commerciale</h5>#}
+                        {#<button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+                            {#<span aria-hidden="true">&times;</span>#}
+                        {#</button>#}
+                    {#</div>#}
+                    {#<div class="modal-body">#}
 
-                        <section class="wizard-section">
-                            <div class="row no-gutters">
-                                <div class="col-lg-12 col-md-12 col-sm-12  row">
-                                    <div class="wizard-content-left d-flex justify-content-center align-items-center">
-                                        <h4>Acheter votre licence d'activation</h4>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12 row">
-                                    <div class="form-wizard">
-                                        <form action="" method="post" role="form">
-                                            <div class="form-wizard-header">
-                                                <p>Remplissez tous les champs avec une etoile</p>
-                                                <ul class="list-unstyled form-wizard-steps clearfix">
-                                                    <li class="active"><span>1</span></li>
-                                                    <li><span>2</span></li>
-                                                </ul>
-                                            </div>
-                                            <fieldset class="wizard-fieldset show">
-                                                <h5>Information personnelle</h5>
+                        {#<section class="wizard-section">#}
+                            {#<div class="row no-gutters">#}
+                                {#<div class="col-lg-12 col-md-12 col-sm-12  row">#}
+                                    {#<div class="wizard-content-left d-flex justify-content-center align-items-center">#}
+                                        {#<h4>Acheter votre licence d'activation</h4>#}
+                                    {#</div>#}
+                                {#</div>#}
+                                {#<div class="col-lg-12 col-md-12 col-sm-12 row">#}
+                                    {#<div class="form-wizard">#}
+                                        {#<form action="" method="post" role="form">#}
+                                            {#<div class="form-wizard-header">#}
+                                                {#<p>Remplissez tous les champs avec une etoile</p>#}
+                                                {#<ul class="list-unstyled form-wizard-steps clearfix">#}
+                                                    {#<li class="active"><span>1</span></li>#}
+                                                    {#<li><span>2</span></li>#}
+                                                {#</ul>#}
+                                            {#</div>#}
+                                            {#<fieldset class="wizard-fieldset show">#}
+                                                {#<h5>Information personnelle</h5>#}
 
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control wizard-required" id="lname">
-                                                    <label for="lname" class="wizard-form-text-label">nom*</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control wizard-required" id="fname">
-                                                    <label for="fname" class="wizard-form-text-label">prénom*</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="email" class="form-control wizard-required" id="email">
-                                                    <label for="email" class="wizard-form-text-label">Email*</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control wizard-required" id="job_title">
-                                                    <label for="job_title" class="wizard-form-text-label">Profession*</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control wizard-required" id="organisation">
-                                                    <label for="organisation" class="wizard-form-text-label">Nom de l'entreprise*</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control " id="phone_number">
-                                                    <label for="phone_number" class="wizard-form-text-label">N* de telephone</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
+                                                {#<div class="form-group">#}
+                                                    {#<input type="text" class="form-control wizard-required" id="lname">#}
+                                                    {#<label for="lname" class="wizard-form-text-label">nom*</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
+                                                {#<div class="form-group">#}
+                                                    {#<input type="text" class="form-control wizard-required" id="fname">#}
+                                                    {#<label for="fname" class="wizard-form-text-label">prénom*</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
+                                                {#<div class="form-group">#}
+                                                    {#<input type="email" class="form-control wizard-required" id="email">#}
+                                                    {#<label for="email" class="wizard-form-text-label">Email*</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
+                                                {#<div class="form-group">#}
+                                                    {#<input type="text" class="form-control wizard-required" id="job_title">#}
+                                                    {#<label for="job_title" class="wizard-form-text-label">Profession*</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
+                                                {#<div class="form-group">#}
+                                                    {#<input type="text" class="form-control wizard-required" id="organisation">#}
+                                                    {#<label for="organisation" class="wizard-form-text-label">Nom de l'entreprise*</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
+                                                {#<div class="form-group">#}
+                                                    {#<input type="text" class="form-control " id="phone_number">#}
+                                                    {#<label for="phone_number" class="wizard-form-text-label">N* de telephone</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
 
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control wizard-required" id="address">
-                                                    <label for="address" class="wizard-form-text-label">Addresse*</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control wizard-required" id="country">
-                                                    <label for="country" class="wizard-form-text-label">Pays*</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control wizard-required" id="city">
-                                                    <label for="city" class="wizard-form-text-label">Ville*</label>
-                                                    <div class="wizard-form-error"></div>
-                                                </div>
+                                                {#<div class="form-group">#}
+                                                    {#<input type="text" class="form-control wizard-required" id="address">#}
+                                                    {#<label for="address" class="wizard-form-text-label">Addresse*</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
+                                                {#<div class="form-group">#}
+                                                    {#<input type="text" class="form-control wizard-required" id="country">#}
+                                                    {#<label for="country" class="wizard-form-text-label">Pays*</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
+                                                {#<div class="form-group">#}
+                                                    {#<input type="text" class="form-control wizard-required" id="city">#}
+                                                    {#<label for="city" class="wizard-form-text-label">Ville*</label>#}
+                                                    {#<div class="wizard-form-error"></div>#}
+                                                {#</div>#}
 
-                                                <div class="form-group clearfix">
-                                                    <a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>
-                                                </div>
-                                            </fieldset>
-                                            <fieldset class="wizard-fieldset">
-                                                <h5>Choisissez la licence à acheter</h5>
-                                                <div class="form-group">
-                                                    Licence
-                                                    <div class="wizard-form-radio">
-                                                        <input name="radio-name" id="radio3" type="radio">
-                                                        <label for="radio3">40000 xof valable 1 mois</label>
-                                                    </div>
-                                                    <div class="wizard-form-radio">
-                                                        <input name="radio-name" id="radio4" type="radio">
-                                                        <label for="radio4">100000 xof valable 3 mois</label>
-                                                    </div>
-                                                    <div class="wizard-form-radio">
-                                                        <input name="radio-name" id="radio5" type="radio">
-                                                        <label for="radio5">180000 xof valable 6 mois</label>
-                                                    </div>
-                                                    <div class="wizard-form-radio">
-                                                        <input name="radio-name" id="radio6" type="radio">
-                                                        <label for="radio6">180000 xof valable 1 an</label>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group clearfix">
-                                                    <a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>
-                                                    <a href="javascript:;" class="form-wizard-submit float-right">Acheter</a>
+                                                {#<div class="form-group clearfix">#}
+                                                    {#<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>#}
+                                                {#</div>#}
+                                            {#</fieldset>#}
+                                            {#<fieldset class="wizard-fieldset">#}
+                                                {#<h5>Choisissez la licence à acheter</h5>#}
+                                                {#<div class="form-group">#}
+                                                    {#Licence#}
+                                                    {#<div class="wizard-form-radio">#}
+                                                        {#<input name="radio-name" id="radio3" type="radio">#}
+                                                        {#<label for="radio3">40000 xof valable 1 mois</label>#}
+                                                    {#</div>#}
+                                                    {#<div class="wizard-form-radio">#}
+                                                        {#<input name="radio-name" id="radio4" type="radio">#}
+                                                        {#<label for="radio4">100000 xof valable 3 mois</label>#}
+                                                    {#</div>#}
+                                                    {#<div class="wizard-form-radio">#}
+                                                        {#<input name="radio-name" id="radio5" type="radio">#}
+                                                        {#<label for="radio5">180000 xof valable 6 mois</label>#}
+                                                    {#</div>#}
+                                                    {#<div class="wizard-form-radio">#}
+                                                        {#<input name="radio-name" id="radio6" type="radio">#}
+                                                        {#<label for="radio6">180000 xof valable 1 an</label>#}
+                                                    {#</div>#}
+                                                {#</div>#}
+                                                {#<div class="form-group clearfix">#}
+                                                    {#<a href="javascript:;" class="form-wizard-previous-btn float-left">Previous</a>#}
+                                                    {#<a href="javascript:;" class="form-wizard-submit float-right">Acheter</a>#}
 
                                                     {#<a href="javascript:;" class="form-wizard-next-btn float-right">Next</a>#}
-                                                </div>
-                                            </fieldset>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                                                {#</div>#}
+                                            {#</fieldset>#}
+                                        {#</form>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</section>#}
 
 
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
+                    {#</div>#}
+                    {#<div class="modal-footer">#}
+                        {#<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
 
-        </div>
+        {#</div>#}
+
+
+
         <div class="modal fade" id="academicModal" tabindex="-1" role="dialog" aria-labelledby="academicModalLabel" aria-hidden="true">
 
             <div class="modal-dialog modal-dialog-centered modal-lg " role="document">

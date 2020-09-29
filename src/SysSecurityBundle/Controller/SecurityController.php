@@ -196,22 +196,22 @@ class SecurityController extends BaseController
         $no_mail=false;
         $no_phone=false;
 
-        if(  $data["code"]!=null ){
-            $no_code=true;
-        }
-        if( $data["mac_address"]!=null ){
-            $no_mac=true;
-        }
-        if(  $data["type"]!=null ){
-            $no_type=true;
-        }
-
-        if(  $data["email"]!=null ){
-            $no_mail=true;
-        }
-        if(  $data["phone_number"]!=null ){
-            $no_phone=true;
-        }
+//        if(  $data["code"]!=null ){
+//            $no_code=true;
+//        }
+//        if( $data["mac_address"]!=null ){
+//            $no_mac=true;
+//        }
+//        if(  $data["type"]!=null ){
+//            $no_type=true;
+//        }
+//
+//        if(  $data["email"]!=null ){
+//            $no_mail=true;
+//        }
+//        if(  $data["phone_number"]!=null ){
+//            $no_phone=true;
+//        }
 
         $dat=[];
         $dat["code"]=$no_code;
