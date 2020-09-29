@@ -16,3 +16,4 @@
 /vendor/
 /web/bundles/
 .idea/workspace.xml
+*.xml___jb_tmp___
