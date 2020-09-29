@@ -224,7 +224,7 @@ class TransactionController extends BaseController
             return new Response($this->serialize($this->errorResponseBlob('client not found')));
         }
 
-        $transaction=$this->initPayDunyaTransaction($saveTempClient['clientId'],$amount,$data['type'],$data['amount_category']);
+        $transaction=$this->initPayDunyaTransaction($saveTempClient['clientId'],$data["email"],$amount,$data['type'],$data['amount_category']);
 
         $description=$transaction->getDetails();
         $identifier=$transaction->getId();

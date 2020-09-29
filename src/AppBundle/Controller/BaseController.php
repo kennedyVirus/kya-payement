@@ -437,7 +437,7 @@ class BaseController extends Controller
         return $dat;
     }
 
-    public function initPayDunyaTransaction($client_id, $amount,$type,$amount_category){
+    public function initPayDunyaTransaction($client_id,$email,$amount,$type,$amount_category){
 
         $transaction = new Transaction();
         $details = "Achat Clé d'activation de KYA SOL DESIGN à travers Carte Bancaire";
@@ -450,6 +450,7 @@ class BaseController extends Controller
         $transaction->setPaymentMode($source);
         $transaction->setProvider('PAYDUNYA');
         $transaction->setType($type);
+        $transaction->setUsername($email);
         $transaction->setAmountCategory($amount_category);
         $transaction->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
         $transaction->setUpdatedAt(new \DateTime());
