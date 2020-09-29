@@ -164,8 +164,9 @@ class TransactionController extends BaseController
             $verification->setPhoneNumber($transaction->getUsername());
             $verification->setState(0);
             $verification->setLicenceKeyId($key->getId());
-            $verification->setTransactionCode($data["tx_reference"].$this->generateRandomNumber(4));
+            $verification->setTransactionCode("".$data["tx_reference"].$this->generateRandomNumber(4));
             $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+            $verification->setUpdatedAt(new \DateTime());
 
             $em->persist($verification);
             $em->flush();
