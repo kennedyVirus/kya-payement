@@ -52,7 +52,7 @@ class BaseController extends Controller
 
     const SMS_ZEDEKA_CLIENT_ID="54911dcd-e69c-4030-9328-4b848c64c4db";
 
-    const SMS_ZEDEKA_SENDER="KYA-ENERGY GROUP";
+    const SMS_ZEDEKA_SENDER="KYA-ENERGY-GROUP";
 
     const KYA_STUDENT_AMOUNT_DAY=1000;
     const KYA_STUDENT_AMOUNT_WEEK=5000;
@@ -393,7 +393,8 @@ class BaseController extends Controller
 
       //  $URL="https://".$host."/api/v2/SendSMS?ApiKey=".$ApiKey."&ClientId=".$ClientId."&SenderId=".$SenderId."&Message=".$body."&MobileNumbers=".$MobileNumber."";
 
-        $URL="https://api.smszedekaa.com/api/v2/SendSMS?ApiKey=ISnqx7tbigE7OQxnGnsBuY4xrZC3m2Uj7wRpbOuIjtk=&ClientId=54911dcd-e69c-4030-9328-4b848c64c4db&SenderId=KYA&Message=HELLO&MobileNumbers=22893643212";
+       // $URL="https://api.smszedekaa.com/api/v2/SendSMS?ApiKey=ISnqx7tbigE7OQxnGnsBuY4xrZC3m2Uj7wRpbOuIjtk=&ClientId=54911dcd-e69c-4030-9328-4b848c64c4db&SenderId=KYA&Message=HELLO&MobileNumbers=22893643212";
+        $URL="https://".$host."/api/v2/SendSMS?ApiKey=".$ApiKey."&ClientId=".$ClientId."&SenderId=".$SenderId."&Message=".$body."&MobileNumbers=".$MobileNumber."";
 
 
         // $URL="https://api.smszedekaa.com/api/v2/SendSMS?ApiKey=ISnqx7tbigE7OQxnGnsBuY4xrZC3m2Uj7wRpbOuIjtk=&ClientId=54911dcd-e69c-4030-9328-4b848c64c4db&SenderId=KYA&Message=HELLO&MobileNumbers=22893643212";
