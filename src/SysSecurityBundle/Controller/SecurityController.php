@@ -180,4 +180,49 @@ class SecurityController extends BaseController
 //            return new Response($this->serialize($this->errorResponseBlob('Invalid parameters',303)));
 //        }
     }
+
+
+    /**
+     * @Route("/test/api/kya/login")
+     */
+
+    public function testLogin(Request $request){
+        $json_data = $request->getContent();
+        $data = json_decode($json_data,true);
+
+        $no_mac=false;
+        $no_code=false;
+        $no_type=false;
+        $no_mail=false;
+        $no_phone=false;
+
+        if(  $data["code"]!=null ){
+            $no_code=true;
+        }
+        if( $data["mac_address"]!=null ){
+            $no_mac=true;
+        }
+        if(  $data["type"]!=null ){
+            $no_type=true;
+        }
+
+        if(  $data["email"]!=null ){
+            $no_mail=true;
+        }
+        if(  $data["phone_number"]!=null ){
+            $no_phone=true;
+        }
+
+        $dat=[];
+        $dat["code"]=$no_code;
+        $dat["mac"]=$no_mac;
+        $dat["type"]=$no_type;
+        $dat["mail"]=$no_mail;
+        $dat["phone"]=$no_phone;
+        $dat["sendingData"]=$data;
+
+
+        return new Response($this->serialize($this->okResponseBlob($dat)));
+
+    }
 }
