@@ -214,13 +214,11 @@ class SecurityController extends BaseController
 //        }
 
         $dat=[];
-        $dat["code"]=$no_code;
-        $dat["mac"]=$no_mac;
-        $dat["type"]=$no_type;
-        $dat["mail"]=$no_mail;
-        $dat["phone"]=$no_phone;
-        $dat["sendingData"]=$data;
-
+        $dat["code"]=$data["code"];
+        $dat["mac"]=$data["mac_address"];
+        $dat["type"]=$data["type"];
+        $dat["mail"]=$data["email"];
+        $dat["phone"]=$data["phone_number"];
 
         return new Response($this->serialize($this->okResponseBlob($dat)));
 

@@ -46,8 +46,6 @@ window.onload = function () {
             },
             recover_email:'',
             recover_transaction_ref:'',
-
-
         },
 
         mounted: function () {
@@ -71,7 +69,7 @@ window.onload = function () {
             // $('#modal-loader').modal('open');
 
 
-            $('.collapsible').collapsible();
+          //  $('.collapsible').collapsible();
 
         },
 
@@ -167,7 +165,7 @@ window.onload = function () {
 
                 let selected = '';
 
-                for (let i = 1;  i < 7 ; i++) {
+                for (let i = 3;  i < 7 ; i++) {
 
                     if($('#academic'+i).is(':checked')) {
                         checked = true;
@@ -178,7 +176,7 @@ window.onload = function () {
                 if (checked === true) {
                     this.new_academic.amount_category=selected
 
-                    $('#modal-loader').modal('show');
+                   // $('#modal-loader').modal('show');
                     console.log(this.new_academic)
                     axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paygate/payment/init',this.new_academic)
                         .then((response)=>{
@@ -221,13 +219,13 @@ window.onload = function () {
                 }
             },
             submitStudentForm(){
-                
+
                 console.log('studennt....')
                 var checked = false
 
                 let selected = '';
 
-                for (let i = 1;  i < 7 ; i++) {
+                for (let i = 1;  i < 4 ; i++) {
 
                     if($('#student'+i).is(':checked')) {
                         checked = true;
