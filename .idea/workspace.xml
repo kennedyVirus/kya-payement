@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1c22a81-b802-45f3-8fb4-d9f0fff9bc90" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/web/assets/css/pay-form.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/js/pay-form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/assets/js/pay-transaction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/pay-transaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/pay-transaction.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="171" column="66" selection-start-line="171" selection-start-column="66" selection-end-line="171" selection-end-column="66" />
+            <state relative-caret-position="186">
+              <caret line="441" column="52" lean-forward="true" selection-start-line="441" selection-start-column="52" selection-end-line="441" selection-end-column="52" />
               <folding>
                 <element signature="n#section#0;n#div#0;n#!!top" />
                 <element signature="n#section#1;n#div#0;n#!!top" />
@@ -68,18 +61,17 @@
                 <element signature="n#fieldset#1;n#form#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
                 <element signature="n#div#1;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#2;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pay-transaction.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pay-transaction.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/assets/js/pay-transaction.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="235" column="39" selection-start-line="235" selection-start-column="39" selection-end-line="235" selection-end-column="39" />
+            <state relative-caret-position="260">
+              <caret line="223" column="16" lean-forward="true" selection-start-line="223" selection-start-column="16" selection-end-line="223" selection-end-column="16" />
               <folding>
                 <element signature="e#2675#2697#0" />
                 <element signature="e#4871#4903#0" />
@@ -111,8 +103,8 @@
       <file leaf-file-name="base2.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
+            <state relative-caret-position="232">
+              <caret line="151" column="83" lean-forward="true" selection-start-line="151" selection-start-column="83" selection-end-line="151" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -143,6 +135,7 @@
       <find>logo</find>
       <find>d</find>
       <find>transaction_</find>
+      <find>submitStudentForm</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,8 +176,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
         <option value="$PROJECT_DIR$/web/assets/css/pay-form.css" />
         <option value="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig" />
-        <option value="$PROJECT_DIR$/web/assets/js/pay-transaction.js" />
         <option value="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/web/assets/js/pay-transaction.js" />
       </list>
     </option>
   </component>
@@ -453,12 +446,12 @@
       <updated>1601211876935</updated>
       <workItem from="1601211879154" duration="23577000" />
       <workItem from="1601300373934" duration="6240000" />
-      <workItem from="1601324795526" duration="25286000" />
+      <workItem from="1601324795526" duration="25474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55103000" />
+    <option name="totallyTimeSpent" value="55291000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -745,13 +738,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="46" column="12" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/js/transaction.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -771,19 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/js/pay-transaction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="235" column="39" selection-start-line="235" selection-start-column="39" selection-end-line="235" selection-end-column="39" />
-          <folding>
-            <element signature="e#2675#2697#0" />
-            <element signature="e#4871#4903#0" />
-            <element signature="e#5070#7188#0" />
-            <element signature="e#7230#9345#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2244">
@@ -796,8 +769,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="171" column="66" selection-start-line="171" selection-start-column="66" selection-end-line="171" selection-end-column="66" />
+        <state relative-caret-position="186">
+          <caret line="441" column="52" lean-forward="true" selection-start-line="441" selection-start-column="52" selection-end-line="441" selection-end-column="52" />
           <folding>
             <element signature="n#section#0;n#div#0;n#!!top" />
             <element signature="n#section#1;n#div#0;n#!!top" />
@@ -812,8 +785,27 @@
             <element signature="n#fieldset#1;n#form#0;n#div#0;n#div#1;n#div#0;n#section#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" />
             <element signature="n#div#1;n#div#0;n#!!top" />
             <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#div#0;n#!!top" />
             <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="151" column="83" lean-forward="true" selection-start-line="151" selection-start-column="83" selection-end-line="151" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/pay-transaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="223" column="16" lean-forward="true" selection-start-line="223" selection-start-column="16" selection-end-line="223" selection-end-column="16" />
+          <folding>
+            <element signature="e#2675#2697#0" />
+            <element signature="e#4871#4903#0" />
+            <element signature="e#5070#7188#0" />
+            <element signature="e#7230#9345#0" />
           </folding>
         </state>
       </provider>

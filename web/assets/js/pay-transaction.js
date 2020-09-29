@@ -221,6 +221,8 @@ window.onload = function () {
                 }
             },
             submitStudentForm(){
+                
+                console.log('studennt....')
                 var checked = false
 
                 let selected = '';
@@ -237,8 +239,8 @@ window.onload = function () {
                     this.new_student.amount_category=selected
 
                     $('#modal-loader').modal('show');
-                    console.log(this.new_academic)
-                    axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paygate/payment/init',this.new_academic)
+                    console.log(this.new_student)
+                    axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paygate/payment/init',this.new_student)
                         .then((response)=>{
                             $('#modal-loader').modal('hide');
 
