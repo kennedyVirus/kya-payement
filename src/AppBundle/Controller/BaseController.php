@@ -382,6 +382,85 @@ class BaseController extends Controller
 
     }
 
+    public function savePaydunyaTempClient($data){
+        if(
+            isset($data["first_name"]) && $data["first_name"]!=null &&
+            isset($data["last_name"]) && $data["last_name"]!=null &&
+            isset($data["address"]) && $data["address"]!=null &&
+            isset($data["country"]) && $data["country"]!=null &&
+            isset($data["city"]) && $data["city"]!=null &&
+            isset($data["email"]) && $data["email"]!=null
+        ){
+            /*save client personal infos as temporary client*/
+
+            $temp_client=new Client();
+
+            $temp_client->setFirstName($data["first_name"]);
+            $temp_client->setLastName($data["last_name"]);
+            $temp_client->setAddress($data["address"]);
+            $temp_client->setCountry($data["country"]);
+            $temp_client->setCity($data["city"]);
+            $temp_client->setEmail($data["email"]);
+            $temp_client->setUsername($data["email"]);
+
+            if(isset($data["phone_number"]) && $data["phone_number"]!=null){
+                $temp_client->setPhoneNumber($data["phone_number"]);
+            }
+
+            if(isset($data["job_title"]) && $data["job_title"]!=null){
+                $temp_client->setJobTitle($data["job_title"]);
+            }
+
+            if(isset($data["organisation"]) && $data["organisation"]!=null){
+                $temp_client->setOrganisation($data["organisation"]);
+            }
+
+            $temp_client->setStatus(0);
+            $temp_client->setCategory(1);
+            $temp_client->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+            $temp_client->setUpdatedAt(new \DateTime());
+
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($temp_client);
+            $em->flush();
+
+            $dat=[];
+            $dat["status"]=true;
+            $dat["clientId"]=$temp_client->getId();
+
+            return $dat;
+        }
+        $dat=[];
+        $dat["status"]=false;
+        $dat["clientId"]=null;
+
+        return $dat;
+    }
+
+    public function initPayDunyaTransaction($client_id, $amount,$type,$amount_category){
+
+        $transaction = new Transaction();
+        $details = "Achat Clé d'activation de KYA SOL DESIGN à travers Carte Bancaire";
+        $source=3;
+
+        $transaction->setDetails($details);
+        $transaction->setClientId($client_id);
+        $transaction->setAmount(intval($amount));
+        $transaction->setState(0);
+        $transaction->setPaymentMode($source);
+        $transaction->setProvider('PAYDUNYA');
+        $transaction->setType($type);
+        $transaction->setAmountCategory($amount_category);
+        $transaction->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+        $transaction->setUpdatedAt(new \DateTime());
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($transaction);
+        $em->flush();
+
+        return $transaction;
+    }
+
 
     public function sendZedekaMessage($destination,$body="ok"){
         $host=BaseController::SMS_ZEDEKA_HOST;

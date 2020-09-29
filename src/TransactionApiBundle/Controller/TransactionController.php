@@ -8,10 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use SysSecurityBundle\Entity\LicenceKey;
 use SysSecurityBundle\Entity\Verification;
+require('../vendor/paydunya-php-master/paydunya.php');
+
 
 class TransactionController extends BaseController
 {
@@ -48,7 +51,6 @@ class TransactionController extends BaseController
             $amount=$this->getAmountToPay($data["type"],$data["amount_category"]);
         }
 
-        $amount=5;
         $paygate_token=BaseController::PAYGATE_AUTH_TOKEN;
         $paygate_transaction_url=BaseController::PAYGATE_TRANSACTION_URL;
 
@@ -191,5 +193,370 @@ class TransactionController extends BaseController
             //return new Response($this->serialize($this->errorResponseBlob('Invalid parameters')));
         }
     }
+
+    /**
+     * @Route("/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paydunya/payment/init")
+     */
+    public function initPayDunayTransactionAction(Request $request){
+        $json_data = $request->getContent();
+        $data = json_decode($json_data,true);
+        $url='';
+
+        $amount=0;
+
+        if(
+            isset($data["type"]) && $data["type"]!=null &&
+            isset($data["amount_category"]) && $data["amount_category"]!=null
+        ){
+            $amount=$this->getAmountToPay($data["type"],$data["amount_category"]);
+        }
+
+        $amount=50;
+
+        $saveTempClient=$this->savePaydunyaTempClient($data);
+
+        if(!($saveTempClient['status'])){
+            //return error
+            return new Response($this->serialize($this->errorResponseBlob('client not found')));
+        }
+
+        $transaction=$this->initPayDunyaTransaction($saveTempClient['clientId'],$amount,$data['type'],$data['amount_category']);
+
+        $description=$transaction->getDetails();
+        $identifier=$transaction->getId();
+
+
+        \Paydunya_Setup::setMasterKey(BaseController::PAYDUNYA_KEY_MAIN);
+        \Paydunya_Setup::setPublicKey(BaseController::PAYDUNYA_KEY_PUBLIC);
+        \Paydunya_Setup::setPrivateKey(BaseController::TEST_PAYDUNYA_KEY_PRIVATE);
+        \Paydunya_Setup::setToken(BaseController::TEST_PAYDUNYA_TOKEN);
+        \Paydunya_Setup::setMode("test");
+
+
+        //Configuration des informations de votre service/entreprise
+
+        \Paydunya_Checkout_Store::setName("KYA-ENERGY GROUP"); // Seul le nom est requis
+        \Paydunya_Checkout_Store::setTagline("Possédez votre energie");
+        \Paydunya_Checkout_Store::setPhoneNumber("+228 70 45 34 81 / 99 90 33 46 / 90 17 25 24");
+        \Paydunya_Checkout_Store::setPostalAddress("08 BP 81101, Lomé - Togo");
+        \Paydunya_Checkout_Store::setWebsiteUrl("http://www.kya-energy.com");
+        \Paydunya_Checkout_Store::setLogoUrl("http://www.kya-energy.com/logo.png");
+        \Paydunya_Checkout_Store::setCallbackUrl("http://www.pay.kya-energy.com/8004064b17546e4380ce83d1be75b50dkfj/api/kya/paydunya/payment/confirm");
+
+        $invoice=new \Paydunya_Checkout_Invoice();
+        $invoice->addChannel('card');
+        $invoice->setDescription($description);
+        $invoice->setTotalAmount($amount);
+        $invoice->addItem("KYA SOL DESIGN licence key for enterprise", 1, $amount, $amount, "KYA SOL DESIGN licence key for enterprise");
+        $invoice->setCancelUrl("http://www.kya-pay.kya-energy.com");
+        $invoice->setReturnUrl("http://www.kya-pay.kya-energy.com/8004064b17546e4380ce83d1be75b50dkfj/api/kya/paydunya/payment/return");
+        $invoice->setCallbackUrl("http://www.kya-pay.kya-energy.com/8004064b17546e4380ce83d1be75b50dkfj/api/kya/paydunya/payment/confirm");
+        $invoice->addCustomData("identifier", $identifier);
+
+        if($invoice->create()){
+            $url=$invoice->getInvoiceUrl();
+        }
+
+        return new Response($this->serialize($this->okResponseBlob([
+            "url" => $url
+        ])));
+    }
+
+    /**
+     * @Route("/8004064b17546e4380ce83d1be75b50dkfj/api/kya/paydunya/payment/confirm")
+     */
+
+    public function paydunyaTransactionCallBackAction(Request $request){
+
+        $json_data = $request->getContent();
+        $data = json_decode($json_data,true);
+
+//        $licence_key=$this->generateRandomString(12).$this->generateRandomNumber(4);
+//
+//        $licence_key_to_send= "<%23>%20CLE%20ACTIVATION%20KYA%20SOL%20DESIGN%20: " . $licence_key;
+//
+//
+//        // $result=$this->sendZedekaMessage("228".$transaction->getPhoneNumber(),$licence_key_to_send);
+//        //$result=$this->sendZedekaMessage("22893643212",$licence_key_to_send);
+//        $result=$this->sendLicenceCodeByEmail("jfkvirus@gmail.com",$licence_key_to_send);
+
+        /*
+         * tx_reference
+         * payment_reference
+         * amount
+         * datetime
+         */
+        //Prenez votre MasterKey, hashez la et comparez le résultat au hash reçu par IPN
+        if($data['data']['hash'] === hash('sha512', BaseController::PAYDUNYA_KEY_MAIN)) {
+
+            if ($data['data']['status'] == "completed") {
+
+                $transaction = $this->TransactionRepo()->find(intval($data['data']['custom_data'][0]["identifier"]));
+
+                if ($transaction != null) {
+                    // set transaction to confirmed
+                    $transaction->setState(1);
+                    $transaction->setUpdatedAt(new \DateTime());
+                    $em = $this->getDoctrine()->getManager();
+                    $em->flush();
+
+                    //generate key
+
+                    $licence_key=$this->generateRandomString(12).$this->generateRandomNumber(4);
+
+                    $key=new LicenceKey();
+                    $key->setName($licence_key);
+                    $key->setType($transaction->getType());
+                    $key->setAmountCategory($transaction->getAmountCategory());
+                    $key->setPrice($transaction->getAmount());
+                    $delay=$this->getDelay($transaction->getAmountCategory());
+                    $key->setDelay($delay*86400);
+                    $key->setUsed(0);
+                    $key->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+                    $key->setUpdatedAt(new \DateTime());
+
+                    $em->persist($key);
+                    $em->flush();
+
+                    //save verification
+
+                    $ref=substr($data['data']['token'],6);
+
+                    $verification=new Verification();
+                    $verification->setEmail($transaction->getUsername());
+                   // $verification->setPhoneNumber($transaction->getPhoneNumber());
+                    $verification->setState(0);
+                    $verification->setLicenceKeyId($key->getId());
+                    $verification->setTransactionCode($ref.$this->generateRandomNumber(4));
+                    $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+                    $verification->setUpdatedAt(new \DateTime());
+
+                    $em->persist($verification);
+                    $em->flush();
+
+                    //send licence key
+
+                    $licence_key_to_send= "<%23>%20CLE%20ACTIVATION%20KYA%20SOL%20DESIGN%20: " . $licence_key;
+
+                     $res=$this->sendZedekaMessage("22893643212",$licence_key_to_send);
+
+                    $result=$this->sendLicenceCodeByEmail("".$transaction->getEmail(),$licence_key_to_send);
+
+                    return new Response($this->serialize($this->okResponseBlob('Operation successful')));
+                }
+            }
+        } else {
+            die("Cette requête n'a pas été émise par PayDunya");
+        }
+    }
+
+    /**
+     * @Route("/8004064b17546e4380ce83d1be75b50dkfj/api/kya/paydunya/payment/return")
+     */
+
+    public function paydunyaTransactionReturnUrlAction(Request $request){
+
+        $token=$request->query->get('token');
+
+         $invoice=new \Paydunya_Checkout_Invoice();
+
+
+
+          if($invoice->confirm($token)){
+
+
+        return new RedirectResponse("http://www.kya-pay.kya-energy.com");
+
+
+//           if($invoice->getStatus()=="completed"){
+//        $transaction = $this->TransactionRepo()->find(intval($invoice->getCustomData("identifier")));
+//        if ($transaction != null) {
+//            // set transaction to confirmed
+//            $transaction->setState(1);
+//            $transaction->setUpdatedAt(new \DateTime());
+//            $em = $this->getDoctrine()->getManager();
+//            $em->flush();
+//
+//            //generate key
+//
+//            $licence_key = $this->generateRandomString(12) . $this->generateRandomNumber(4);
+
+//            $key = new LicenceKey();
+//            $key->setName($licence_key);
+//            $key->setType($transaction->getType());
+//            $key->setAmountCategory($transaction->getAmountCategory());
+//            $key->setPrice($transaction->getAmount());
+//            $delay = $this->getDelay($transaction->getAmountCategory());
+//            $key->setDelay($delay * 86400);
+//            $key->setUsed(0);
+//            $key->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+//            $key->setUpdatedAt(new \DateTime());
+//
+//            $em->persist($key);
+//            $em->flush();
+//
+//            //save verification
+//
+//            $verification = new Verification();
+//            $verification->setEmail($transaction->getEmail());
+//            $verification->setPhoneNumber($transaction->getPhoneNumber());
+//            $verification->setState(0);
+//            $verification->setLicenceKeyId($key->getId());
+//            $verification->setTransactionCode($token . $this->generateRandomNumber(4));
+//            $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+//
+//            $em->persist($verification);
+//            $em->flush();
+
+            //send licence key
+
+//            $licence_key_to_send = "<%23>%20CLE%20ACTIVATION%20KYA%20SOL%20DESIGN%20: " . $licence_key;
+//
+//
+//            // $result=$this->sendZedekaMessage("228".$transaction->getPhoneNumber(),$licence_key_to_send);
+//            $result = $this->sendZedekaMessage("22893643212", $licence_key_to_send);
+//
+//
+//            return new RedirectResponse("http://localhost:8000/kya-sol-design");
+
+            //   }
+
+        }else{
+              return new RedirectResponse("http://www.kya-pay.kya-energy.com/pay");
+
+          }
+
+          }
+//        try {
+//            //Prenez votre MasterKey, hashez la et comparez le résultat au hash reçu par IPN
+//            if($data['data']['hash'] === hash('sha512', BaseController::PAYDUNYA_KEY_MAIN)) {
+//
+//                if ($data['data']['status'] == "completed") {
+//
+//                    $transaction = $this->TransactionRepo()->find(intval($data['data']['custom_data'][0]["identifier"]));
+//
+//                    if ($transaction != null) {
+//                        // set transaction to confirmed
+//                        $transaction->setState(1);
+//                        $transaction->setUpdatedAt(new \DateTime());
+//                        $em = $this->getDoctrine()->getManager();
+//                        $em->flush();
+//
+//                        //generate key
+//
+//                        $licence_key=$this->generateRandomString(12).$this->generateRandomNumber(4);
+//
+//                        $key=new LicenceKey();
+//                        $key->setName($licence_key);
+//                        $key->setType($transaction->getType());
+//                        $key->setAmountCategory($transaction->getAmountCategory());
+//                        $key->setPrice($transaction->getAmount());
+//                        $delay=$this->getDelay($transaction->getAmountCategory());
+//                        $key->setDelay($delay*86400);
+//                        $key->setUsed(0);
+//                        $key->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+//                        $key->setUpdatedAt(new \DateTime());
+//
+//                        $em->persist($key);
+//                        $em->flush();
+//
+//                        //save verification
+//
+//                        $verification=new Verification();
+//                        $verification->setEmail($transaction->getEmail());
+//                        $verification->setPhoneNumber($transaction->getPhoneNumber());
+//                        $verification->setState(0);
+//                        $verification->setLicenceKeyId($key->getId());
+//                        $verification->setTransactionCode($data["tx_reference"].$this->generateRandomNumber(4));
+//                        $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+//
+//                        $em->persist($verification);
+//                        $em->flush();
+//
+//                        //send licence key
+//
+//                        $licence_key_to_send= "<%23>%20CLE%20ACTIVATION%20KYA%20SOL%20DESIGN%20: " . $licence_key;
+//
+//
+//
+//                        $result=$this->sendZedekaMessage("228".$transaction->getPhoneNumber(),$licence_key_to_send);
+//
+//
+//                        return new \Symfony\Component\HttpFoundation\Response($this->serialize($this->okResponseBlob('Operation successful')));
+//                    }
+//
+//                }
+//
+//            } else {
+//                die("Cette requête n'a pas été émise par PayDunya");
+//            }
+//        } catch(\Exception $e) {
+//            die();
+//        }
+
+
+//
+//        $payment_reference='';
+//        if(isset($data["payment_reference"])){
+//            $payment_reference=$data["payment_reference"];
+//        }
+//        $fs = new Filesystem();
+//        $fs->appendToFile('callback_logs.txt', 'identifier: '. $data["identifier"].' '. 'payment:' .$data["payment_method"].' '.'tx_reference:'.$data["tx_reference"].' '.'payment_reference:'.$payment_reference.' '.'datetime:'.$data['datetime']);
+//
+//        $transaction = $this->TransactionRepo()->find(intval($data["identifier"]));
+//
+//        if ($transaction != null) {
+//            // set transaction to confirmed
+//            $transaction->setState(1);
+//            $transaction->setUpdatedAt(new \DateTime());
+//            $em = $this->getDoctrine()->getManager();
+//            $em->flush();
+//
+//            //generate key
+//
+//            $licence_key=$this->generateRandomString(12).$this->generateRandomNumber(4);
+//
+//            $key=new LicenceKey();
+//            $key->setName($licence_key);
+//            $key->setType($transaction->getType());
+//            $key->setAmountCategory($transaction->getAmountCategory());
+//            $key->setPrice($transaction->getAmount());
+//            $delay=$this->getDelay($transaction->getAmountCategory());
+//            $key->setDelay($delay*86400);
+//            $key->setUsed(0);
+//            $key->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+//            $key->setUpdatedAt(new \DateTime());
+//
+//            $em->persist($key);
+//            $em->flush();
+//
+//            //save verification
+//
+//            $verification=new Verification();
+//            $verification->setEmail($transaction->getEmail());
+//            $verification->setPhoneNumber($transaction->getPhoneNumber());
+//            $verification->setState(0);
+//            $verification->setLicenceKeyId($key->getId());
+//            $verification->setTransactionCode($data["tx_reference"].$this->generateRandomNumber(4));
+//            $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
+//
+//            $em->persist($verification);
+//            $em->flush();
+//
+//            //send licence key
+//
+//            $licence_key_to_send= "<%23>%20CLE%20ACTIVATION%20KYA%20SOL%20DESIGN%20: " . $licence_key;
+//
+//
+//
+//            $result=$this->sendZedekaMessage("228".$transaction->getPhoneNumber(),$licence_key_to_send);
+//
+//
+//            return new \Symfony\Component\HttpFoundation\Response($this->serialize($this->okResponseBlob('Operation successful')));
+//        }
+//        else  {
+//            return new \Symfony\Component\HttpFoundation\Response($this->serialize($this->errorResponseBlob('Invalid parameters')));
+//        }
+
 
 }

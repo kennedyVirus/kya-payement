@@ -77,18 +77,12 @@ window.onload = function () {
         methods : {
 
             openPay1Modal(){
-               // $('#modal_pay_enterprise').modal('open')
-
                 $('#enterpriseModal').modal('show')
             },
             openPay2Modal(){
-                // $('#modal_pay_enterprise').modal('open')
-
                 $('#academicModal').modal('show')
             },
             openPay3Modal(){
-                // $('#modal_pay_enterprise').modal('open')
-
                 $('#studentModal').modal('show')
             },
             // openRecoverModal(){
@@ -161,6 +155,7 @@ window.onload = function () {
             // },
 
             submitAcademicForm(){
+                console.log('academic...')
                 var checked = false
 
                 let selected = '';
@@ -191,7 +186,7 @@ window.onload = function () {
                                         title: 'Confirmation!',
                                         text: "Vous serez redirigé vers un site marchand pour continuer l'opération",
                                         icon: 'warning',
-                                        confirmButtonText: 'OK'
+                                        confirmButtonText: 'Continuer'
                                     }).then((result) => {
                                         if (result.value) {
                                             window.location.href = response.data.data.url
@@ -242,7 +237,7 @@ window.onload = function () {
                         .then((response)=>{
                             $('#modal-loader').modal('hide');
 
-                            $('#academicModal').modal('hide')
+                            $('#studentModal').modal('hide')
 
                             console.log(response.data)
                             if(response.data.error===0){
@@ -251,7 +246,7 @@ window.onload = function () {
                                         title: 'Confirmation!',
                                         text: "Vous serez redirigé vers un site marchand pour continuer l'opération",
                                         icon: 'warning',
-                                        confirmButtonText: 'OK'
+                                        confirmButtonText: 'Continuer'
                                     }).then((result) => {
                                         if (result.value) {
                                             window.location.href = response.data.data.url
@@ -265,6 +260,57 @@ window.onload = function () {
                                         confirmButtonText: 'OK'
                                     })
                                 }
+                            }else{
+                                Swal.fire({
+                                    title: 'Error!',
+                                    text: 'Oups.Une erreur est survenue , réssayez svp',
+                                    icon: 'error',
+                                    confirmButtonText: 'OK'
+                                })
+                            }
+                        }).catch((error)=>{
+                        console.log(error)
+                    })
+                }
+            },
+            submitEnterpriseForm(){
+
+                console.log('enterprise....')
+                var checked = false
+
+                let selected = '';
+
+                for (let i = 3;  i < 7 ; i++) {
+
+                    if($('#enterprise'+i).is(':checked')) {
+                        checked = true;
+                        selected = i;
+                        break;
+                    }
+                }
+                if (checked === true) {
+                    this.new_enterprise.amount_category=selected
+
+                    $('#modal-loader').modal('show');
+                    console.log(this.new_enterprise)
+                    axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paydunya/payment/init',this.new_enterprise)
+                        .then((response)=>{
+                            $('#modal-loader').modal('hide');
+
+                            $('#enterpriseModal').modal('hide')
+
+                            console.log(response.data)
+                            if(response.data.error===0){
+                                    Swal.fire({
+                                        title: 'Confirmation!',
+                                        text: "Vous serez redirigé vers un site marchand pour continuer l'opération",
+                                        icon: 'warning',
+                                        confirmButtonText: 'Continuer'
+                                    }).then((result) => {
+                                        if (result.value) {
+                                            window.location.href = response.data.data.url
+                                        }
+                                    })
                             }else{
                                 Swal.fire({
                                     title: 'Error!',
@@ -344,7 +390,7 @@ window.onload = function () {
 
                 let selected = '';
 
-                for (let i = 4;  i < 7 ; i++) {
+                for (let i = 3;  i < 7 ; i++) {
 
                     if($('#enterprise'+i).is(':checked')) {
                         checked = true;

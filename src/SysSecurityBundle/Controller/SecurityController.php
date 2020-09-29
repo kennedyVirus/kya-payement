@@ -217,7 +217,6 @@ class SecurityController extends BaseController
         $dat["brut"]=$json_data;
         $dat["modifie"]=$data;
 
-
         return new Response($this->serialize($this->okResponseBlob($dat)));
 
     }

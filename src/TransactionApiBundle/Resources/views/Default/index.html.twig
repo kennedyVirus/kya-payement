@@ -196,8 +196,7 @@
                                 <li>300000 xof valable 1 an</li>
                             </ul>
                             <div class="btn-wrap">
-                                {#<a @click="openPay1Modal()" class="btn-buy">Acheter</a>#}
-                                <a href="#" class="btn-buy">Acheter</a>
+                                <a @click="openPay1Modal()" class="btn-buy">Acheter</a>
                             </div>
                         </div>
                     </div>
@@ -352,6 +351,96 @@
 
 
 
+        <div class="modal fade" id="enterpriseModal" tabindex="-1" role="dialog" aria-labelledby="enterpriseModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog modal-dialog-centered modal-lg " role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="">License Commerciale</h5>
+                        {#<button type="button" class="close" data-dismiss="modal" aria-label="Close">#}
+                            {#<span aria-hidden="true">&times;</span>#}
+                        {#</button>#}
+                    </div>
+                    <div class="modal-body">
+
+                        <form data-toggle="validator" role="form" style="padding:20px 80px 0px 80px;" v-on:submit.prevent="submitEnterpriseForm">
+                            <div class="form-group">
+                                <label for="last_name1" class="control-label">*Nom</label>
+                                <input type="text" class="form-control" id="last_name1" placeholder="Nom" v-model="new_enterprise.last_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="first_name1" class="control-label">*Prénom</label>
+                                <input type="text" class="form-control" id="first_name1" placeholder="Prénom" v-model="new_enterprise.first_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone_number1" class="control-label">Numéro de télephone</label>
+                                <input type="text" class="form-control" id="phone_number1" placeholder="Numero de telephone" v-model="new_enterprise.phone_number" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email1" class="control-label">Email</label>
+                                <input type="email" class="form-control" id="email1" placeholder="Email" v-model="new_enterprise.email" data-error=" address mail invalide" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="job_title1" class="control-label">*Profession</label>
+                                <input type="text" class="form-control" id="job_title1" placeholder="Profession" v-model="new_enterprise.job_title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address1" class="control-label">*Adresse</label>
+                                <input type="text" class="form-control" id="address1" placeholder="Adresse" v-model="new_enterprise.address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="country1" class="control-label">*Pays</label>
+                                <input type="text" class="form-control" id="country1" placeholder="Pays de résidence" v-model="new_enterprise.country" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="city1" class="control-label">*Ville</label>
+                                <input type="text" class="form-control" id="city1" placeholder="Ville de résidence" v-model="new_enterprise.city" required>
+                            </div>
+
+                            <h5>Choisissez le type de licence</h5>
+
+                            <div class="form-group">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="licence_enterprise" id="enterprise3"  required>
+                                        40000 xof valable 1 mois
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="licence_enterprise" id="enterprise4"  required>
+                                        100000 xof valable 3 mois
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="licence_enterprise" id="enterprise5"  required>
+                                        180000 xof valable 6 mois
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="licence_enterprise" id="enterprise6"   required>
+                                        300000 xof valable 1 an
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Valider</button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <div class="modal fade" id="academicModal" tabindex="-1" role="dialog" aria-labelledby="academicModalLabel" aria-hidden="true">
 
             <div class="modal-dialog modal-dialog-centered modal-lg " role="document">
@@ -405,26 +494,26 @@
                             <div class="form-group">
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="licence" id="academic3"  required>
+                                        <input type="radio" name="licence_academic" id="academic3"  required>
                                         25000 xof valable 1 mois
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="licence" id="academic4"  required>
+                                        <input type="radio" name="licence_academic" id="academic4"  required>
                                         70000 xof valable 3 mois
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="licence" id="academic5"  required>
+                                        <input type="radio" name="licence_academic" id="academic5"  required>
                                         130000 xof valable 6 mois
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="licence" id="academic6"   required>
-                                        250000 xof valable 1 mois
+                                        <input type="radio" name="licence_academic" id="academic6"   required>
+                                        250000 xof valable 1 an
                                     </label>
                                 </div>
                             </div>
@@ -499,19 +588,19 @@
                             <div class="form-group">
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="licence" id="student1"  >
+                                        <input type="radio" name="licence_student" id="student1"  >
                                         1000 xof valable 1 journée
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="licence" id="student2" >
+                                        <input type="radio" name="licence_student" id="student2" >
                                         5000 xof valable 1 semaine
                                     </label>
                                 </div>
                                 <div class="radio">
                                     <label>
-                                        <input type="radio" name="licence" id="student3" >
+                                        <input type="radio" name="licence_student" id="student3" >
                                         15000 xof valable 1 an
                                     </label>
                                 </div>

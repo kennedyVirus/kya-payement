@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1c22a81-b802-45f3-8fb4-d9f0fff9bc90" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kya_pay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kya_pay.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/assets/js/pay-transaction.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/assets/js/pay-transaction.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,13 +23,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TransactionController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TransactionController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="168" column="57" selection-start-line="168" selection-start-column="57" selection-end-line="168" selection-end-column="57" />
+            <state relative-caret-position="167">
+              <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
               <folding>
                 <element signature="e#51#91#0#PHP" expanded="true" />
+                <element signature="e#974#3619#0#PHP" />
+                <element signature="e#3705#6405#0#PHP" />
+                <element signature="e#6986#12024#0#PHP" />
+                <element signature="e#10007#13690#0#PHP" />
+                <element signature="e#10169#10255#0#PHP" />
+                <element signature="e#17016#17031#0#PHP" />
+                <element signature="e#20036#20038#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -33,16 +46,16 @@
         <entry file="file://$PROJECT_DIR$/src/SysSecurityBundle/Entity/Verification.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
-              <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SecurityController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="215" column="16" lean-forward="true" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+            <state relative-caret-position="209">
+              <caret line="192" column="22" selection-start-line="192" selection-start-column="22" selection-end-line="192" selection-end-column="22" />
               <folding>
                 <element signature="e#493#8995#0#PHP" />
                 <element signature="e#859#8844#0#PHP" />
@@ -56,12 +69,15 @@
       <file leaf-file-name="BaseController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="385" column="20" selection-start-line="385" selection-start-column="20" selection-end-line="385" selection-end-column="20" />
+            <state relative-caret-position="180">
+              <caret line="241" column="20" selection-start-line="241" selection-start-column="20" selection-end-line="241" selection-end-column="20" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
                 <element signature="e#7581#9454#0#PHP" />
                 <element signature="e#9460#10026#0#PHP" />
+                <element signature="e#10033#12044#0#PHP" />
+                <element signature="e#12087#14143#0#PHP" />
+                <element signature="e#14094#15391#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -70,21 +86,43 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1071">
-              <caret line="495" lean-forward="true" selection-start-line="495" selection-end-line="495" />
+            <state relative-caret-position="-2125">
+              <caret line="162" column="45" selection-start-line="162" selection-start-column="45" selection-end-line="162" selection-end-column="45" />
               <folding>
                 <element signature="n#section#0;n#div#0;n#!!top" />
                 <element signature="n#section#1;n#div#0;n#!!top" />
                 <element signature="n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
                 <element signature="n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
                 <element signature="n#div#2;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
+                <element signature="n#section#2;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#ul#0;n#div#0;n#div#2;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#2;n#!!top" />
+                <element signature="n#div#0;n#div#1;n#div#2;n#!!top" />
                 <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#div#8;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" />
+                <element signature="n#div#1;n#div#2;n#!!top" />
+                <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+                <element signature="n#div#8;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" />
+                <element signature="n#div#2;n#div#0;n#!!top" />
                 <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pay-transaction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/assets/js/pay-transaction.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="298" lean-forward="true" selection-start-line="298" selection-end-line="298" />
+              <folding>
+                <element signature="e#2675#2697#0" />
+                <element signature="e#5494#8141#0" />
+                <element signature="e#8174#10860#0" />
+                <element signature="e#10888#13536#0" />
+                <element signature="e#13564#15763#0" />
               </folding>
             </state>
           </provider>
@@ -116,8 +154,8 @@
       <find>d</find>
       <find>logo</find>
       <find>feat</find>
-      <find>submitStudentForm</find>
       <find>transaction_</find>
+      <find>submitStudentForm</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -155,11 +193,11 @@
         <option value="$PROJECT_DIR$/web/assets/css/pay-form.css" />
         <option value="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/base2.html.twig" />
         <option value="$PROJECT_DIR$/web/asset/assets/css/style.css" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
-        <option value="$PROJECT_DIR$/web/assets/js/pay-transaction.js" />
-        <option value="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" />
         <option value="$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
+        <option value="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/web/assets/js/pay-transaction.js" />
+        <option value="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" />
       </list>
     </option>
   </component>
@@ -224,6 +262,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/psr/link" />
+      <path value="$PROJECT_DIR$/vendor/paydunya-php-master/paydunya" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -398,7 +437,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="veri&#9;null&#9;null&#10;tra&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/js/pay-transaction.js&#10;CLIEN&#9;null&#9;null&#10;s&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/SysSecurityBundle/Controller/SecurityController.php&#10;secu&#9;null&#9;null&#10;parameters&#9;FILE&#9;file://C:/wamp64/www/kya-payement/app/config/parameters.yml&#10;sty&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/asset/assets/css/style.css&#10;ba&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base2.html.twig&#10;base&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base.html.twig&#10;pay&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/css/pay-form.css&#10;bas&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base.html.twig&#10;style&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/asset/assets/css/style.css&#10;app&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/app_dev.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/config.yml&#10;confi&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/config.yml&#10;routi&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/routing.yml&#10;appker&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/AppKernel.php&#10;re&#9;FILE&#9;file://C:/wamp64/www/kya_pay/src/TransactionApiBundle/Entity/NoPersist/ResponseBlob.php&#10;securi&#9;null&#9;null&#10;client&#9;null&#9;null&#10;verifi&#9;null&#9;null&#10;lice&#9;null&#9;null&#10;cli&#9;null&#9;null&#10;compo&#9;FILE&#9;file://C:/wamp64/www/kya_pay/composer.json" />
+    <property name="SearchEverywhereHistoryKey" value="tr&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/js/pay-transaction.js&#10;veri&#9;null&#9;null&#10;tra&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/js/pay-transaction.js&#10;CLIEN&#9;null&#9;null&#10;s&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/SysSecurityBundle/Controller/SecurityController.php&#10;secu&#9;null&#9;null&#10;parameters&#9;FILE&#9;file://C:/wamp64/www/kya-payement/app/config/parameters.yml&#10;sty&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/asset/assets/css/style.css&#10;ba&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base2.html.twig&#10;base&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base.html.twig&#10;pay&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/css/pay-form.css&#10;bas&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base.html.twig&#10;style&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/asset/assets/css/style.css&#10;app&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/app_dev.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/config.yml&#10;confi&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/config.yml&#10;routi&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/routing.yml&#10;appker&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/AppKernel.php&#10;re&#9;FILE&#9;file://C:/wamp64/www/kya_pay/src/TransactionApiBundle/Entity/NoPersist/ResponseBlob.php&#10;securi&#9;null&#9;null&#10;client&#9;null&#9;null&#10;verifi&#9;null&#9;null&#10;lice&#9;null&#9;null&#10;cli&#9;null&#9;null&#10;compo&#9;FILE&#9;file://C:/wamp64/www/kya_pay/composer.json" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../kya-sol-design/kya-pay" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -428,12 +467,12 @@
       <updated>1601211876935</updated>
       <workItem from="1601211879154" duration="23577000" />
       <workItem from="1601300373934" duration="6240000" />
-      <workItem from="1601324795526" duration="38618000" />
+      <workItem from="1601324795526" duration="43043000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68435000" />
+    <option name="totallyTimeSpent" value="72860000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -725,76 +764,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/js/pay-transaction.js">
+    <entry file="file://$PROJECT_DIR$/src/SysSecurityBundle/Entity/Verification.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="227" column="38" selection-start-line="227" selection-start-column="38" selection-end-line="227" selection-end-column="38" />
-          <folding>
-            <element signature="e#2675#2697#0" />
-            <element signature="e#5494#8139#0" />
-          </folding>
+        <state relative-caret-position="161">
+          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="495" lean-forward="true" selection-start-line="495" selection-end-line="495" />
+        <state relative-caret-position="209">
+          <caret line="192" column="22" selection-start-line="192" selection-start-column="22" selection-end-line="192" selection-end-column="22" />
           <folding>
-            <element signature="n#section#0;n#div#0;n#!!top" />
-            <element signature="n#section#1;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
-            <element signature="n#div#2;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#div#2;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#2;n#!!top" />
-            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#493#8995#0#PHP" />
+            <element signature="e#859#8844#0#PHP" />
+            <element signature="e#4865#8830#0#PHP" />
+            <element signature="e#9314#9351#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="385" column="20" selection-start-line="385" selection-start-column="20" selection-end-line="385" selection-end-column="20" />
+        <state relative-caret-position="180">
+          <caret line="241" column="20" selection-start-line="241" selection-start-column="20" selection-end-line="241" selection-end-column="20" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
             <element signature="e#7581#9454#0#PHP" />
             <element signature="e#9460#10026#0#PHP" />
+            <element signature="e#10033#12044#0#PHP" />
+            <element signature="e#12087#14143#0#PHP" />
+            <element signature="e#14094#15391#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2125">
+          <caret line="162" column="45" selection-start-line="162" selection-start-column="45" selection-end-line="162" selection-end-column="45" />
+          <folding>
+            <element signature="n#section#0;n#div#0;n#!!top" />
+            <element signature="n#section#1;n#div#0;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#section#1;n#div#0;n#!!top" />
+            <element signature="n#section#2;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#div#2;n#div#1;n#div#0;n#section#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#2;n#!!top" />
+            <element signature="n#div#0;n#div#1;n#div#2;n#!!top" />
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#div#8;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" />
+            <element signature="n#div#1;n#div#2;n#!!top" />
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#div#8;n#form#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#2;n#!!top" />
+            <element signature="n#div#2;n#div#0;n#!!top" />
+            <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/assets/js/pay-transaction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="298" lean-forward="true" selection-start-line="298" selection-end-line="298" />
+          <folding>
+            <element signature="e#2675#2697#0" />
+            <element signature="e#5494#8141#0" />
+            <element signature="e#8174#10860#0" />
+            <element signature="e#10888#13536#0" />
+            <element signature="e#13564#15763#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="168" column="57" selection-start-line="168" selection-start-column="57" selection-end-line="168" selection-end-column="57" />
+        <state relative-caret-position="167">
+          <caret line="115" lean-forward="true" selection-start-line="115" selection-end-line="115" />
           <folding>
             <element signature="e#51#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SysSecurityBundle/Entity/Verification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="45" column="18" lean-forward="true" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="215" column="16" lean-forward="true" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
-          <folding>
-            <element signature="e#493#8995#0#PHP" />
-            <element signature="e#859#8844#0#PHP" />
-            <element signature="e#4865#8830#0#PHP" />
-            <element signature="e#9314#9351#0#PHP" />
+            <element signature="e#974#3619#0#PHP" />
+            <element signature="e#3705#6405#0#PHP" />
+            <element signature="e#6986#12024#0#PHP" />
+            <element signature="e#10007#13690#0#PHP" />
+            <element signature="e#10169#10255#0#PHP" />
+            <element signature="e#17016#17031#0#PHP" />
+            <element signature="e#20036#20038#0#PHP" />
           </folding>
         </state>
       </provider>
