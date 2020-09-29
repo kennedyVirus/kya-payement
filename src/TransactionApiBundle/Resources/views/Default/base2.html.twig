@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>KYA SOL DESIGN</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="author">
+
+    <!-- Favicons -->
+    <link href="{{ asset('assets/img/logo/logo.jpeg')  }}" rel="icon">
+    <link href="{{ asset('assets/img/logo/logo.jpeg')  }}" rel="apple-touch-icon">
+    {#<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">#}
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+
+    <link href="{{ asset('asset/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/assets/vendor/venobox/venobox.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/assets/vendor/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+
+
+    <!-- Template Main CSS File -->
+    <link href="{{ asset('asset/assets/css/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+        <h1 class="logo mr-auto"><a href="">KYA SOL DESIGN</a></h1>
+
+
+        {#<h1 class="logo mr-auto"><a href="index.html">OnePage</a></h1>#}
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>
+                {#<li class="active"><a href="index.html">Home</a></li>#}
+                {#<li><a href="#about">About</a></li>#}
+                <li><a href="#services">Comment ça marche?</a></li>
+                {#<li><a href="#portfolio">Portfolio</a></li>#}
+                {#<li><a href="#team">Team</a></li>#}
+                <li><a href="#pricing">Payez votre licence</a></li>
+                {#<li class="drop-down"><a href="">Drop Down</a>#}
+                {#<ul>#}
+                {#<li><a href="#">Drop Down 1</a></li>#}
+                {#<li class="drop-down"><a href="#">Deep Drop Down</a>#}
+                {#<ul>#}
+                {#<li><a href="#">Deep Drop Down 1</a></li>#}
+                {#<li><a href="#">Deep Drop Down 2</a></li>#}
+                {#<li><a href="#">Deep Drop Down 3</a></li>#}
+                {#<li><a href="#">Deep Drop Down 4</a></li>#}
+                {#<li><a href="#">Deep Drop Down 5</a></li>#}
+                {#</ul>#}
+                {#</li>#}
+                {#<li><a href="#">Drop Down 2</a></li>#}
+                {#<li><a href="#">Drop Down 3</a></li>#}
+                {#<li><a href="#">Drop Down 4</a></li>#}
+                {#</ul>#}
+                {#</li>#}
+                {#<li><a href="#contact">Contact</a></li>#}
+
+            </ul>
+        </nav><!-- .nav-menu -->
+
+        <a href="{{ asset('assets/file/software.exe') }}" class="get-started-btn scrollto" download>Telechargez Gratuitement ici</a>
+
+    </div>
+</header><!-- End Header -->
+
+
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+            <div class="col-xl-7 col-lg-9 text-center">
+                <h1>Lorem ipsuss</h1>
+                <h2>Lorem ipsus</h2>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{{ asset('assets/file/software.exe') }}" class="btn-get-started scrollto" download>Telechargez Gratuitement ici</a>
+        </div>
+
+    </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+    {% block mainpage %}
+    {% endblock %}
+
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+
+    <div class="container d-md-flex py-4">
+
+        <div class="mr-md-auto text-center text-md-left">
+            <div class="copyright">
+                &copy;  2020<strong><span><a href="https://en.kya-energy.com/" style="color: black" target="_blank">KYA-ENERGY-GROUP</a></span></strong>. Tous droits reservés
+            </div>
+        </div>
+        <div class="social-links text-center text-md-right pt-3 pt-md-0">
+
+            <a href="https://twitter.com/KyaGroup" class="twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="http://www.fb.com/KEG.TG" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.instagram.com/keg.tg/" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UC_7TIwBfk9JJO-sgGTXCpqg" class="google-plus"><i class="bx bxl-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/kya-energy-group" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://kya-energy.tumblr.com/p" class="linkedin"><i class="bx bxl-tumblr"></i></a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
+<div id="preloader"></div>
+
+<!-- Vendor JS Files -->
+<script src="{{ asset('asset/assets/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/php-email-form/validate.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/waypoints/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/counterup/counterup.min.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/venobox/venobox.min.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+<script src="{{ asset('asset/assets/vendor/aos/aos.js') }}"></script>
+
+<!-- Template Main JS File -->
+<script src="{{ asset('asset/assets/js/main.js') }}"></script>
+
+</body>
+
+</html>

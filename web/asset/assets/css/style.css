@@ -45,13 +45,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  background: #2487ce;
+  background: #009a86;
   color: #fff;
   transition: all 0.4s;
 }
 
 .back-to-top i:hover {
-  background: #3e9bdd;
+  background: #f3982f;
   color: #fff;
 }
 
@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo a {
-  color: #16507b;
+  color: #009a86;
 }
 
 #header .logo img {
@@ -181,7 +181,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #2487ce;
+  color: #009a86;
 }
 
 .nav-menu .drop-down ul {
@@ -265,7 +265,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Get Startet Button */
 .get-started-btn {
   margin-left: 25px;
-  background: #2487ce;
+  background: #009a86;
   color: #fff;
   border-radius: 5px;
   padding: 10px 30px 11px 30px;
@@ -277,7 +277,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .get-started-btn:hover {
-  background: #2079b8;
+  background: #f3982f;
   color: #fff;
 }
 
@@ -403,7 +403,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 100vh;
   position: relative;
-  background: url("../img/hero-bg.jpg") top center;
+  background: url("../img/hero-bg.png") top center;
   background-size: cover;
   position: relative;
 }
@@ -448,11 +448,11 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   margin-top: 30px;
   color: #fff;
-  background: #2487ce;
+  background: #009a86;
 }
 
 #hero .btn-get-started:hover {
-  background: #3194db;
+  background: #f3982f;
 }
 
 #hero .icon-boxes {
@@ -1365,23 +1365,23 @@ section {
   display: inline-block;
   padding: 10px 40px;
   border-radius: 4px;
-  color: #2487ce;
+  color: #f3982f ;
   transition: none;
   font-size: 14px;
   font-weight: 400;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   transition: 0.3s;
-  border: 2px solid #2487ce;
+  border: 2px solid #f3982f ;
 }
 
 .pricing .box .btn-buy:hover {
-  background: #2487ce;
+  background: #f3982f ;
   color: #fff;
 }
 
 .pricing .featured {
-  background: #2487ce;
+  background: #009a86;
 }
 
 .pricing .featured h3, .pricing .featured h4, .pricing .featured h4 span, .pricing .featured ul, .pricing .featured ul .na {
@@ -1400,7 +1400,7 @@ section {
 
 .pricing .featured .btn-buy:hover {
   background: #fff;
-  color: #2487ce;
+  color: #f3982f ;
 }
 
 /*--------------------------------------------------------------
@@ -1917,7 +1917,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #2487ce;
+  background: #f3982f;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1930,7 +1930,7 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: #3194db;
+  background: #009a86;
   color: #fff;
   text-decoration: none;
 }
