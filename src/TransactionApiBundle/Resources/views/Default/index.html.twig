@@ -13,6 +13,22 @@
     {#{% block page_title %}Tableau de Bord {% endblock %}#}
 
 {% block mainpage  %}
+    {% for message in app.session.flashbag.get('transaction_success') %}
+        <div class="card green accent-4">
+            <div class="card-content white-text">
+                {{ message }}
+            </div>
+        </div>
+    {% endfor %}
+
+    {% for message in app.session.flashbag.get('transaction_error') %}
+        <div class="card red">
+            <div class="card-content white-text">
+                {{ message }}
+            </div>
+        </div>
+    {% endfor %}
+
     <div id="app">
         <!-- ======= About Video Section ======= -->
         <section id="about-video" class="about-video">

@@ -165,7 +165,7 @@ class TransactionController extends BaseController
             //save verification
 
             $verification=new Verification();
-            $verification->setPhoneNumber($transaction->getPhoneNumber());
+            $verification->setPhoneNumber($transaction->getUsername());
             $verification->setState(0);
             $verification->setLicenceKeyId($key->getId());
             $verification->setTransactionCode($data["tx_reference"].$this->generateRandomNumber(4));
@@ -178,11 +178,20 @@ class TransactionController extends BaseController
 
             $licence_key_to_send= "<%23>%20CLE%20ACTIVATION%20KYA%20SOL%20DESIGN%20: " . $licence_key;
 
-            $result=$this->sendZedekaMessage("228".$transaction->getPhoneNumber(),$licence_key_to_send);
+            $result=$this->sendZedekaMessage("228".$transaction->getUsername(),$licence_key_to_send);
 
-            return new Response($this->serialize($this->okResponseBlob('Operation successful')));
+            $request->getSession()->getFlashBag()->add('transaction_success', 'Transaction éffectuée avec succès');
+
+            return $this->redirectToRoute('homepage');
+
+
+           // return new Response($this->serialize($this->okResponseBlob('Operation successful')));
         }else  {
-            return new Response($this->serialize($this->errorResponseBlob('Invalid parameters')));
+            $request->getSession()->getFlashBag()->add('transaction_error', 'Une erreur est survenue lors de la transaction');
+
+            return $this->redirectToRoute('homepage');
+
+            //return new Response($this->serialize($this->errorResponseBlob('Invalid parameters')));
         }
     }
 
