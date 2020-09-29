@@ -214,11 +214,9 @@ class SecurityController extends BaseController
 //        }
 
         $dat=[];
-        $dat["code"]=$data["code"];
-        $dat["mac"]=$data["mac_address"];
-        $dat["type"]=$data["type"];
-        $dat["mail"]=$data["email"];
-        $dat["phone"]=$data["phone_number"];
+        $dat["brut"]=$json_data;
+        $dat["modifie"]=$data;
+
 
         return new Response($this->serialize($this->okResponseBlob($dat)));
 
