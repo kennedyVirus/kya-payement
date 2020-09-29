@@ -17,7 +17,7 @@ use Paydunya;
 use Paydunya_Checkout_Invoice;
 //require('../vendor/paydunya-php-master/paydunya.php');
 
-require ('../vendor/paydunya-php-master/paydunya.php');
+//require ('../vendor/paydunya-php-master/paydunya.php');
 
 
 class TransactionController extends BaseController
