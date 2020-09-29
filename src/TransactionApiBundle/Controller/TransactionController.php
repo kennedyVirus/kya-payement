@@ -21,7 +21,6 @@ class TransactionController extends BaseController
 
     public function testzedeka(Request  $request){
         $res=$this->sendZedekaMessage('22893643212','just a test from kya');
-
         return new JsonResponse(0);
     }
 

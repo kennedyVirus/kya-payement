@@ -332,7 +332,6 @@ class BaseController extends Controller
             isset($data["country"]) && $data["country"]!=null &&
             isset($data["city"]) && $data["city"]!=null &&
             isset($data["phone_number"]) && $data["phone_number"]!=null
-
         ){
             /*save client personal infos as temporary client*/
 
@@ -391,16 +390,12 @@ class BaseController extends Controller
         $SenderId=BaseController::SMS_ZEDEKA_SENDER;
         $MobileNumber=$destination;
 
-      //  $URL="https://".$host."/api/v2/SendSMS?ApiKey=".$ApiKey."&ClientId=".$ClientId."&SenderId=".$SenderId."&Message=".$body."&MobileNumbers=".$MobileNumber."";
-
-       // $URL="https://api.smszedekaa.com/api/v2/SendSMS?ApiKey=ISnqx7tbigE7OQxnGnsBuY4xrZC3m2Uj7wRpbOuIjtk=&ClientId=54911dcd-e69c-4030-9328-4b848c64c4db&SenderId=KYA&Message=HELLO&MobileNumbers=22893643212";
         $URL="https://".$host."/api/v2/SendSMS?ApiKey=".$ApiKey."&ClientId=".$ClientId."&SenderId=".$SenderId."&Message=".$body."&MobileNumbers=".$MobileNumber."";
 
-
         // $URL="https://api.smszedekaa.com/api/v2/SendSMS?ApiKey=ISnqx7tbigE7OQxnGnsBuY4xrZC3m2Uj7wRpbOuIjtk=&ClientId=54911dcd-e69c-4030-9328-4b848c64c4db&SenderId=KYA&Message=HELLO&MobileNumbers=22893643212";
+
         $guzzleClient = new \GuzzleHttp\Client();
         $response = $guzzleClient->request('GET', $URL);
-
 
         return $response;
     }
