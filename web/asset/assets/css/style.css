@@ -1305,7 +1305,7 @@ section {
   border-radius: 8px;
   position: relative;
   overflow: hidden;
-  background: #fefefe;
+  background: #009a86;
   box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.1);
 }
 
@@ -1315,12 +1315,12 @@ section {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 600;
-  color: #124265;
+  color: #ffffff;
 }
 
 .pricing .box h4 {
   font-size: 42px;
-  color: #2487ce;
+  color: #ffffff;
   font-weight: 500;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 20px;
@@ -1333,15 +1333,15 @@ section {
 }
 
 .pricing .box h4 span {
-  color: #bababa;
+  color: #ffffff;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: bold;
 }
 
 .pricing .box ul {
   padding: 0;
   list-style: none;
-  color: #124265;
+  color: #ffffff;
   text-align: center;
   line-height: 20px;
   font-size: 14px;
@@ -1365,24 +1365,25 @@ section {
   display: inline-block;
   padding: 10px 40px;
   border-radius: 4px;
-  color: #f3982f ;
+  color: #ffffff ;
   transition: none;
   font-size: 14px;
   font-weight: 400;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   transition: 0.3s;
-  border: 2px solid #f3982f ;
+  border: 2px solid #ffffff ;
 }
 
 .pricing .box .btn-buy:hover {
-  background: #f3982f ;
-  color: #fff;
+  background: #ffffff ;
+  color: #009a86;
 }
 
 .pricing .featured {
-  background: #009a86;
+  background: #f3982f;
 }
+
 
 .pricing .featured h3, .pricing .featured h4, .pricing .featured h4 span, .pricing .featured ul, .pricing .featured ul .na {
   color: #fff;
@@ -1402,6 +1403,8 @@ section {
   background: #fff;
   color: #f3982f ;
 }
+
+
 
 /*--------------------------------------------------------------
 # Frequently Asked Questions
