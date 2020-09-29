@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use GuzzleHttp\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -31,6 +32,6 @@ class DefaultController extends Controller
         $response = $guzzleClient->request('GET', $URL);
 
 
-        return 0;
+        return  new JsonResponse(0);
     }
 }
