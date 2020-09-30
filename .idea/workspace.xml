@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1c22a81-b802-45f3-8fb4-d9f0fff9bc90" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/kya_pay.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kya_pay.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SysSecurityBundle/Entity/Verification.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/SysSecurityBundle/Entity/Verification.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,13 +19,12 @@
       <file leaf-file-name="TransactionController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="340" column="48" lean-forward="true" selection-start-line="340" selection-start-column="48" selection-end-line="340" selection-end-column="48" />
+            <state relative-caret-position="255">
+              <caret line="267" column="25" lean-forward="true" selection-start-line="267" selection-start-column="25" selection-end-line="267" selection-end-column="25" />
               <folding>
                 <element signature="e#51#91#0#PHP" expanded="true" />
                 <element signature="e#1181#3778#0#PHP" />
                 <element signature="e#3887#7003#0#PHP" />
-                <element signature="e#7113#10059#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -298,12 +291,12 @@
       <workItem from="1601211879154" duration="23577000" />
       <workItem from="1601300373934" duration="6240000" />
       <workItem from="1601324795526" duration="50800000" />
-      <workItem from="1601466094302" duration="904000" />
+      <workItem from="1601466094302" duration="1856000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81521000" />
+    <option name="totallyTimeSpent" value="82473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -643,13 +636,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="340" column="48" lean-forward="true" selection-start-line="340" selection-start-column="48" selection-end-line="340" selection-end-column="48" />
+        <state relative-caret-position="255">
+          <caret line="267" column="25" lean-forward="true" selection-start-line="267" selection-start-column="25" selection-end-line="267" selection-end-column="25" />
           <folding>
             <element signature="e#51#91#0#PHP" expanded="true" />
             <element signature="e#1181#3778#0#PHP" />
             <element signature="e#3887#7003#0#PHP" />
-            <element signature="e#7113#10059#0#PHP" />
           </folding>
         </state>
       </provider>
