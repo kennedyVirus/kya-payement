@@ -20,6 +20,7 @@
         <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="778">
+
               <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
               <folding>
                 <element signature="e#51#91#0#PHP" expanded="true" />
@@ -49,6 +50,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
               <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+
             </state>
           </provider>
         </entry>
@@ -150,6 +152,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
         <option value="$PROJECT_DIR$/src/SysSecurityBundle/Entity/Verification.php" />
         <option value="$PROJECT_DIR$/src/SysSecurityBundle/Controller/SecurityController.php" />
+
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/TransactionApiBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -270,7 +274,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/wamp64/www/kya-payement/.gitignore&#10;giti&#9;FILE&#9;file://C:/wamp64/www/kya-payement/.gitignore&#10;lice&#9;null&#9;null&#10;ver&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/SysSecurityBundle/Entity/Verification.php&#10;ind&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/index.html.twig&#10;autolo&#9;FILE&#9;file://C:/wamp64/www/kya-payement/vendor/autoload.php&#10;tr&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/js/pay-transaction.js&#10;veri&#9;null&#9;null&#10;tra&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/js/pay-transaction.js&#10;CLIEN&#9;null&#9;null&#10;s&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/SysSecurityBundle/Controller/SecurityController.php&#10;secu&#9;null&#9;null&#10;parameters&#9;FILE&#9;file://C:/wamp64/www/kya-payement/app/config/parameters.yml&#10;sty&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/asset/assets/css/style.css&#10;ba&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base2.html.twig&#10;base&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base.html.twig&#10;pay&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/css/pay-form.css&#10;bas&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base.html.twig&#10;style&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/asset/assets/css/style.css&#10;app&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/app_dev.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/config.yml&#10;confi&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/config.yml&#10;routi&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/routing.yml&#10;appker&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/AppKernel.php&#10;re&#9;FILE&#9;file://C:/wamp64/www/kya_pay/src/TransactionApiBundle/Entity/NoPersist/ResponseBlob.php&#10;securi&#9;null&#9;null&#10;client&#9;null&#9;null&#10;verifi&#9;null&#9;null&#10;cli&#9;null&#9;null&#10;compo&#9;FILE&#9;file://C:/wamp64/www/kya_pay/composer.json" />
+
+    <property name="SearchEverywhereHistoryKey" value="giti&#9;FILE&#9;file://C:/wamp64/www/kya-payement/.gitignore&#10;lice&#9;null&#9;null&#10;ver&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/SysSecurityBundle/Entity/Verification.php&#10;ind&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/index.html.twig&#10;autolo&#9;FILE&#9;file://C:/wamp64/www/kya-payement/vendor/autoload.php&#10;tr&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/js/pay-transaction.js&#10;veri&#9;null&#9;null&#10;tra&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/js/pay-transaction.js&#10;CLIEN&#9;null&#9;null&#10;s&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/SysSecurityBundle/Controller/SecurityController.php&#10;secu&#9;null&#9;null&#10;parameters&#9;FILE&#9;file://C:/wamp64/www/kya-payement/app/config/parameters.yml&#10;sty&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/asset/assets/css/style.css&#10;ba&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base2.html.twig&#10;base&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base.html.twig&#10;pay&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/assets/css/pay-form.css&#10;bas&#9;FILE&#9;file://C:/wamp64/www/kya-payement/src/TransactionApiBundle/Resources/views/Default/base.html.twig&#10;style&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/asset/assets/css/style.css&#10;app&#9;FILE&#9;file://C:/wamp64/www/kya-payement/web/app_dev.php&#10;config&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/config.yml&#10;confi&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/config.yml&#10;routi&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/config/routing.yml&#10;appker&#9;FILE&#9;file://C:/wamp64/www/kya_pay/app/AppKernel.php&#10;re&#9;FILE&#9;file://C:/wamp64/www/kya_pay/src/TransactionApiBundle/Entity/NoPersist/ResponseBlob.php&#10;securi&#9;null&#9;null&#10;client&#9;null&#9;null&#10;verifi&#9;null&#9;null&#10;cli&#9;null&#9;null&#10;compo&#9;FILE&#9;file://C:/wamp64/www/kya_pay/composer.json" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -301,18 +306,21 @@
       <workItem from="1601211879154" duration="23577000" />
       <workItem from="1601300373934" duration="6240000" />
       <workItem from="1601324795526" duration="50800000" />
-      <workItem from="1601466094302" duration="5698000" />
+
+      <workItem from="1601466094302" duration="5476000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86520000" />
+
+    <option name="totallyTimeSpent" value="86093000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15658094" />
+
+      <window_info content_ui="combo" id="Project" order="0" weight="0.15658094" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -337,6 +345,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" order="3" side_tool="true" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="3" />
+
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -357,6 +366,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" x="0" y="0" width="295" height="544" id="Documentation" order="0" side_tool="true" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="4" />
@@ -365,7 +375,10 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Message" order="0" />
+    
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,6 +668,7 @@
             <element signature="e#3887#7003#0#PHP" />
             <element signature="e#7242#10269#0#PHP" />
           </folding>
+
         </state>
       </provider>
     </entry>
@@ -669,6 +683,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        <state relative-caret-position="204">
+          <caret line="215" column="33" selection-start-line="215" selection-start-column="33" selection-end-line="215" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TransactionApiBundle/Controller/TransactionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <folding>
+            <element signature="e#51#91#0#PHP" expanded="true" />
+            <element signature="e#3887#7003#0#PHP" />
+            <element signature="e#7242#10269#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
