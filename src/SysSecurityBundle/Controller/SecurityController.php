@@ -299,7 +299,7 @@ class SecurityController extends BaseController
                     if($licence_key !=null){
                         if($licence_key->getName()==$data["code"] ){
 
-                            if($licence_key->getType()!=$data["type"]){
+                            if($licence_key->getType()!=intval($data["type"])){
                                 return new Response($this->serialize($this->errorResponseBlob('Wrong Licence key',301)));
                             }
 
@@ -343,6 +343,7 @@ class SecurityController extends BaseController
 
                                     $response=[];
                                     $response["delay"]=$licence_key->getDelay();
+                                    $response["type"]=$licence_key->getType();
 
                                     return new Response($this->serialize($this->okResponseBlob($response)));
                                 }

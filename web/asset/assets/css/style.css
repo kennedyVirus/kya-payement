@@ -176,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   color: #124265;
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 18px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -271,7 +271,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 30px 11px 30px;
   white-space: nowrap;
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   display: inline-block;
 }
@@ -441,7 +441,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero .btn-get-started {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 0.5px;
   display: inline-block;
   padding: 14px 50px;
