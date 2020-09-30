@@ -12,6 +12,7 @@ use SysSecurityBundle\Entity\ClientLogin;
 class SecurityController extends BaseController
 {
 
+
     /**
      * @Route("/8004064b17546e4380ce83d1be75b50dkfj/api/kya/sol/design/login")
      */
