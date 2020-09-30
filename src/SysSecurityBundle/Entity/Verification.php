@@ -50,9 +50,16 @@ class Verification
     private $transactionCode;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="code", type="string", length=255,nullable=true)
+     */
+    private $code;
+
+    /**
      * @var int
      *
-     * @ORM\Column(name="licence_key_id", type="integer", length=255)
+     * @ORM\Column(name="licence_key_id", type="integer")
      */
     private $licenceKeyId;
 
@@ -183,6 +190,30 @@ class Verification
     public function getTransactionCode()
     {
         return $this->transactionCode;
+    }
+
+    /**
+     * Set code
+     *
+     * @param string $code
+     *
+     * @return Verification
+     */
+    public function setCode($code)
+    {
+        $this->code = $code;
+
+        return $this;
+    }
+
+    /**
+     * Get code
+     *
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
     }
 
     /**

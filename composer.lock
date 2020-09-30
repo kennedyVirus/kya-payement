@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f4426215539dbfda46229e2981f79f8",
+    "content-hash": "6966410991d9a06cd9a0a86399073e1e",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -1318,6 +1318,63 @@
             "time": "2019-01-03T20:59:08+00:00"
         },
         {
+            "name": "paydunya/paydunya",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paydunya/paydunya-php-composer.git",
+                "reference": "df0e64ff8f19bc04311185aa26fef5f4beb8f833"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/paydunya/paydunya-php-composer/zipball/df0e64ff8f19bc04311185aa26fef5f4beb8f833",
+                "reference": "df0e64ff8f19bc04311185aa26fef5f4beb8f833",
+                "shasum": ""
+            },
+            "require": {
+                "rmccue/requests": "^1.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Paydunya\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PAYDUNYA",
+                    "email": "paydunya@paydunya.com"
+                }
+            ],
+            "description": "PAYDUNYA PHP CLIENT",
+            "keywords": [
+                "Marchand en ligne",
+                "Mobile Payments",
+                "Orange Money",
+                "Paiement Sénégal",
+                "Passerelle de paiement en ligne",
+                "Plateforme de paiement en ligne Afrique",
+                "Sénégal",
+                "api",
+                "best payment gateway",
+                "client php",
+                "library",
+                "online payment gateway",
+                "paiement",
+                "paiement en ligne",
+                "paydunya",
+                "paydunya.com",
+                "payment gateway",
+                "payment gateway Africa",
+                "php client"
+            ],
+            "time": "2017-08-19T00:59:56+00:00"
+        },
+        {
             "name": "psr/cache",
             "version": "1.0.1",
             "source": {
@@ -1645,6 +1702,55 @@
             ],
             "description": "A polyfill for getallheaders.",
             "time": "2019-03-08T08:55:37+00:00"
+        },
+        {
+            "name": "rmccue/requests",
+            "version": "v1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rmccue/Requests.git",
+                "reference": "87932f52ffad70504d93f04f15690cf16a089546"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rmccue/Requests/zipball/87932f52ffad70504d93f04f15690cf16a089546",
+                "reference": "87932f52ffad70504d93f04f15690cf16a089546",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "requests/test-server": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Requests": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ISC"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan McCue",
+                    "homepage": "http://ryanmccue.info"
+                }
+            ],
+            "description": "A HTTP library written in PHP, for human beings.",
+            "homepage": "http://github.com/rmccue/Requests",
+            "keywords": [
+                "curl",
+                "fsockopen",
+                "http",
+                "idna",
+                "ipv6",
+                "iri",
+                "sockets"
+            ],
+            "time": "2016-10-13T00:11:37+00:00"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2969,5 +3075,6 @@
     "platform-dev": [],
     "platform-overrides": {
         "php": "5.6"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }

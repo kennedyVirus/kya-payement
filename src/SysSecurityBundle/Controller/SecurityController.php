@@ -19,16 +19,16 @@ class SecurityController extends BaseController
         $json_data = $request->getContent();
         $data = json_decode($json_data,true);
 
-//        if(
-//            isset($data["code"]) && $data["code"]!=null &&
-//            isset($data["mac_address"]) && $data["mac_address"]!=null &&
-//            isset($data["type"]) && $data["type"]!=null
-//        ){
+        if(
+            isset($data["code"]) && $data["code"]!=null &&
+            isset($data["mac_address"]) && $data["mac_address"]!=null &&
+            isset($data["type"]) && $data["type"]!=null
+        ){
             if($data["type"]==1){
                 //enterprise
-                if( $data["email"]!=null){
+                if(isset($data["email"]) && $data["email"]!=null){
                     $check_code_sent=$this->VerificationRepo()->findOneBy([
-                        'licenceKeyId'=> $data["code"],
+                        'code'=> $data["code"],
                         'state'=>0
                     ]);
                     $client=$this->ClientRepo()->findOneBy([
@@ -98,12 +98,10 @@ class SecurityController extends BaseController
                     return new Response($this->serialize($this->errorResponseBlob('Invalid parameters',303)));
                 }
             }else{
-                if( $data["phone_number"]!=null){
-
-                    /*check if user*/
+                if(isset($data["phone_number"]) && $data["phone_number"]!=null){
 
                     $check_code_sent=$this->VerificationRepo()->findOneBy([
-                        'licenceKeyId'=> $data["code"],
+                        'code'=> $data["code"],
                         'state'=>0
                     ]);
 
@@ -114,6 +112,8 @@ class SecurityController extends BaseController
                     if($check_code_sent ==null || $client==null){
                         return new Response($this->serialize($this->errorResponseBlob('User not found',300)));
                     }
+
+
                     //licence key
                     $licence_key=$this->LicenceKeyRepo()->find($check_code_sent->getLicenceKeyId());
 
@@ -175,10 +175,10 @@ class SecurityController extends BaseController
                     return new Response($this->serialize($this->errorResponseBlob('Invalid parameters',303)));
                 }
             }
-        //}
-//        else{
-//            return new Response($this->serialize($this->errorResponseBlob('Invalid parameters',303)));
-//        }
+        }
+        else{
+            return new Response($this->serialize($this->errorResponseBlob('Invalid parameters',303)));
+        }
     }
 
 

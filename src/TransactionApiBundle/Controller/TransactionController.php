@@ -13,8 +13,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use SysSecurityBundle\Entity\LicenceKey;
 use SysSecurityBundle\Entity\Verification;
-use Paydunya;
+use Paydunya\Paydunya;
+use Paydunya_Setup;
+use Paydunya\Setup;
+use Paydunya_Checkout_Store;
 use Paydunya_Checkout_Invoice;
+require('../vendor/autoload.php');
+
 //require('vendor/paydunya-php-master/paydunya.php');
 
 //require ('../paydunya-php-master/paydunya.php');
@@ -54,6 +59,7 @@ class TransactionController extends BaseController
         ){
             $amount=$this->getAmountToPay($data["type"],$data["amount_category"]);
         }
+        $amount=5;
 
         $paygate_token=BaseController::PAYGATE_AUTH_TOKEN;
         $paygate_transaction_url=BaseController::PAYGATE_TRANSACTION_URL;
@@ -169,6 +175,7 @@ class TransactionController extends BaseController
             $verification=new Verification();
             $verification->setPhoneNumber($transaction->getUsername());
             $verification->setState(0);
+            $verification->setCode($licence_key);
             $verification->setLicenceKeyId($key->getId());
             $verification->setTransactionCode("".$data["tx_reference"].$this->generateRandomNumber(4));
             $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
@@ -215,8 +222,6 @@ class TransactionController extends BaseController
             $amount=$this->getAmountToPay($data["type"],$data["amount_category"]);
         }
 
-        $amount=50;
-
         $saveTempClient=$this->savePaydunyaTempClient($data);
 
         if(!($saveTempClient['status'])){
@@ -246,6 +251,23 @@ class TransactionController extends BaseController
         \Paydunya_Checkout_Store::setWebsiteUrl("http://www.kya-energy.com");
         \Paydunya_Checkout_Store::setLogoUrl("http://www.kya-energy.com/logo.png");
         \Paydunya_Checkout_Store::setCallbackUrl("http://www.pay.kya-energy.com/8004064b17546e4380ce83d1be75b50dkfj/api/kya/paydunya/payment/confirm");
+
+
+//        Paydunya_Setup::setMasterKey(BaseController::PAYDUNYA_KEY_MAIN);
+//        Paydunya_Setup::setPublicKey(BaseController::TEST_PAYDUNYA_KEY_PUBLIC);
+//        Paydunya_Setup::setPrivateKey(BaseController::TEST_PAYDUNYA_KEY_PRIVATE);
+//        Paydunya_Setup::setToken(BaseController::TEST_PAYDUNYA_TOKEN);
+//        Paydunya_Setup::setMode('test');
+//
+//        //Configuration des informations de votre service/entreprise
+//
+//        Paydunya_Checkout_Store::setName("KYA-ENERGY GROUP"); // Seul le nom est requis
+//        Paydunya_Checkout_Store::setTagline("Possédez votre energie");
+//        Paydunya_Checkout_Store::setPhoneNumber("+228 70 45 34 81 / 99 90 33 46 / 90 17 25 24");
+//        Paydunya_Checkout_Store::setPostalAddress("08 BP 81101, Lomé - Togo");
+//        Paydunya_Checkout_Store::setWebsiteUrl("http://www.kya-energy.com");
+//        Paydunya_Checkout_Store::setLogoUrl("http://www.kya-energy.com/logo.png");
+//        Paydunya_Checkout_Store::setCallbackUrl("http://www.pay.kya-energy.com/8004064b17546e4380ce83d1be75b50dkfj/api/kya/paydunya/payment/confirm");
 
         $invoice=new Paydunya_Checkout_Invoice();
         $invoice->addChannel('card');
@@ -331,6 +353,7 @@ class TransactionController extends BaseController
                    // $verification->setPhoneNumber($transaction->getPhoneNumber());
                     $verification->setState(0);
                     $verification->setLicenceKeyId($key->getId());
+                    $verification->setCode($licence_key);
                     $verification->setTransactionCode($ref.$this->generateRandomNumber(4));
                     $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
                     $verification->setUpdatedAt(new \DateTime());
