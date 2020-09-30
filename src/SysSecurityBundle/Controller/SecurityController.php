@@ -197,7 +197,7 @@ class SecurityController extends BaseController
             isset($data["mac_address"]) && $data["mac_address"]!=null &&
             isset($data["type"]) && $data["type"]!=null
         ){
-            if($data["type"]==1){
+            if(intval($data["type"])==1){
                 //enterprise
                 if(isset($data["email"]) && $data["email"]!=null){
                     $check_code_sent=$this->VerificationRepo()->findOneBy([
@@ -280,6 +280,15 @@ class SecurityController extends BaseController
                         'code'=> $data["code"],
                         'state'=>0
                     ]);
+
+                    $dat=[];
+                    if($check_code_sent !=null){
+                        $dat["verif_id"]=$check_code_sent->getId();
+                    }
+
+                    return new Response($this->serialize($this->okResponseBlob($dat)));
+
+
 
                     $client=$this->ClientRepo()->findOneBy([
                         'phoneNumber'=>$data["phone_number"]
