@@ -15,6 +15,7 @@ use SysSecurityBundle\Entity\LicenceKey;
 use SysSecurityBundle\Entity\Verification;
 use Paydunya;
 use Paydunya_Checkout_Invoice;
+
 //require('vendor/paydunya-php-master/paydunya.php');
 
 //require ('../paydunya-php-master/paydunya.php');
@@ -169,6 +170,7 @@ class TransactionController extends BaseController
             $verification=new Verification();
             $verification->setPhoneNumber($transaction->getUsername());
             $verification->setState(0);
+            $verification->setCode($licence_key);
             $verification->setLicenceKeyId($key->getId());
             $verification->setTransactionCode("".$data["tx_reference"].$this->generateRandomNumber(4));
             $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
@@ -331,6 +333,7 @@ class TransactionController extends BaseController
                    // $verification->setPhoneNumber($transaction->getPhoneNumber());
                     $verification->setState(0);
                     $verification->setLicenceKeyId($key->getId());
+                    $verification->setCode($licence_key);
                     $verification->setTransactionCode($ref.$this->generateRandomNumber(4));
                     $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
                     $verification->setUpdatedAt(new \DateTime());
