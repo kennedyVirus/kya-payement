@@ -15,7 +15,7 @@ use SysSecurityBundle\Entity\LicenceKey;
 use SysSecurityBundle\Entity\Verification;
 use Paydunya;
 use Paydunya_Checkout_Invoice;
-require('.../vendor/paydunya-php-master/paydunya.php');
+require('./vendor/paydunya-php-master/paydunya.php');
 
 //require ('../paydunya-php-master/paydunya.php');
 
