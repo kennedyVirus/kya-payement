@@ -177,10 +177,19 @@ h1, h2, h3, h4, h5, h6 {
   color: #124265;
   transition: 0.3s;
   font-size: 18px;
+  font-weight:bold;
   font-family: "Open Sans", sans-serif;
 }
 
-.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+.give_space{
+  margin-top:2em !important;
+  margin-bottom:2em !important;
+}
+
+.nav-menu a:hover,  .nav-menu li:hover > a {
+  color: #f3982f;
+}
+.nav-menu .active > a{
   color: #009a86;
 }
 

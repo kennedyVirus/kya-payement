@@ -452,6 +452,23 @@
                                     </label>
                                 </div>
                             </div>
+                            <div class="form-group give_space">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="check_mobile_money" checked>
+                                        Payer par Flooz/T-money ?
+                                    </label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="checkbox" >
+                                    <label>
+                                        <input type="checkbox" id="check_card" >
+                                        Payer par Carte Visa/mastercard ?
+                                    </label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
                             <h4>Donnez le numéro sur lequel se fera la transaction</h4>
                             <div class="form-group">
                                 <label for="transaction_phone_number" class="control-label">*Numéro Flooz ou T-money</label>
@@ -538,19 +555,39 @@
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="licence_student" id="student3" >
-                                        15000 FCFA valable 1 an
+                                        15000 FCFA valable 1 mois
                                     </label>
                                 </div>
+                            </div>
+                            <div class="form-group give_space">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="check_mobile_money" checked>
+                                        Payer par Flooz/T-money ?
+                                    </label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="checkbox" >
+                                    <label>
+                                        <input type="checkbox" id="check_card" >
+                                        Payer par Carte Visa/mastercard ?
+                                    </label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
 
+                            <div>
+                                <h4>Donnez le numéro sur lequel se fera la transaction</h4>
+                                <div class="form-group">
+                                    <label for="transaction_phone_number3" class="control-label">*Numéro Flooz ou T-money</label>
+                                    <input type="text" class="form-control" id="transaction_phone_number3" placeholder="Numéro Flooz/ Tmoney" v-model="new_student.transaction_phone_number" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Valider</button>
+                                </div>
                             </div>
-                            <h4>Donnez le numéro sur lequel se fera la transaction</h4>
-                            <div class="form-group">
-                                <label for="transaction_phone_number3" class="control-label">*Numéro Flooz ou T-money</label>
-                                <input type="text" class="form-control" id="transaction_phone_number3" placeholder="Numéro Flooz/ Tmoney" v-model="new_student.transaction_phone_number" required>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Valider</button>
-                            </div>
+
+
                         </form>
 
                     </div>

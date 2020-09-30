@@ -46,30 +46,10 @@ window.onload = function () {
             },
             recover_email:'',
             recover_transaction_ref:'',
+            check_mobile_money:false
         },
 
         mounted: function () {
-
-         //   alert('hello')
-
-           // $('.modal').modal();
-
-           // $('#enterpriseModal').modal()
-
-            // $('#modal-loader').modal({
-            //         dismissible: false, // Modal can be dismissed by clicking outside of the modal
-            //         opacity: 0.5, // Opacity of modal background
-            //         inDuration: 300, // Transition in duration
-            //         outDuration: 200, // Transition out duration
-            //         startingTop: '4%', // Starting top style attribute
-            //         endingTop: '10%', // Ending top style attribute
-            //     }
-            // );
-
-            // $('#modal-loader').modal('open');
-
-
-          //  $('.collapsible').collapsible();
 
         },
 
