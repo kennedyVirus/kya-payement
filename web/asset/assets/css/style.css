@@ -433,6 +433,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h2 {
   color: #5e5e5e;
+  font-weight: 500;
   margin: 10px 0 0 0;
   font-size: 50px;
 }

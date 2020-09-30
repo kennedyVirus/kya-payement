@@ -35,8 +35,11 @@ class SecurityController extends BaseController
                     $client=$this->ClientRepo()->findOneBy([
                         'email'=>$data['email']
                     ]);
+                    if($check_code_sent ==null ){
+                        return new Response($this->serialize($this->errorResponseBlob('Wrong Licence key',301)));
+                    }
 
-                    if($check_code_sent ==null || $client==null){
+                    if( $client==null){
                         return new Response($this->serialize($this->errorResponseBlob('User not found',300)));
                     }
                     //licence key
@@ -109,8 +112,11 @@ class SecurityController extends BaseController
                     $client=$this->ClientRepo()->findOneBy([
                         'phoneNumber'=>$data["phone_number"]
                     ]);
+                    if($check_code_sent ==null ){
+                        return new Response($this->serialize($this->errorResponseBlob('Wrong Licence key',301)));
+                    }
 
-                    if($check_code_sent ==null || $client==null){
+                    if($client==null){
                         return new Response($this->serialize($this->errorResponseBlob('User not found',300)));
                     }
 
