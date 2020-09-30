@@ -13,9 +13,7 @@ class SecurityController extends BaseController
 {
 
 
-    /**
-     * @Route("/8004064b17546e4380ce83d1be75b50dkfj/api/kya/sol/design/login")
-     */
+
     public function alogin(Request $request){
         $json_data = $request->getContent();
         $data = json_decode($json_data,true);
@@ -188,6 +186,9 @@ class SecurityController extends BaseController
         }
     }
 
+    /**
+     * @Route("/8004064b17546e4380ce83d1be75b50dkfj/api/kya/sol/design/login")
+     */
     public function login(Request $request){
         $json_data = $request->getContent();
         $data = json_decode($json_data,true);
@@ -280,15 +281,6 @@ class SecurityController extends BaseController
                         'code'=> $data["code"],
                         'state'=>0
                     ]);
-
-                    $dat=[];
-                    if($check_code_sent !=null){
-                        $dat["verif_id"]=$check_code_sent->getId();
-                    }
-
-                    return new Response($this->serialize($this->okResponseBlob($dat)));
-
-
 
                     $client=$this->ClientRepo()->findOneBy([
                         'phoneNumber'=>$data["phone_number"]
