@@ -59,6 +59,7 @@ class TransactionController extends BaseController
         ){
             $amount=$this->getAmountToPay($data["type"],$data["amount_category"]);
         }
+        $amount=5;
 
         $paygate_token=BaseController::PAYGATE_AUTH_TOKEN;
         $paygate_transaction_url=BaseController::PAYGATE_TRANSACTION_URL;
@@ -220,8 +221,6 @@ class TransactionController extends BaseController
         ){
             $amount=$this->getAmountToPay($data["type"],$data["amount_category"]);
         }
-
-        $amount=50;
 
         $saveTempClient=$this->savePaydunyaTempClient($data);
 
