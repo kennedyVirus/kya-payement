@@ -83,15 +83,6 @@ window.onload = function () {
 
         methods : {
 
-            showAlert(){
-                Swal.fire({
-                    title: 'KYA-SolDesign!',
-                    text: "Le logiciel sera disponible dans quelques heures.Réessayez plus tard.Merci",
-                    icon: 'success',
-                    confirmButtonText: 'J\'ai compris'
-                })
-            },
-
             openPay1Modal(){
                 this.check_mobile_money_academic=true
                 this.check_mobile_money_enterprise=true
