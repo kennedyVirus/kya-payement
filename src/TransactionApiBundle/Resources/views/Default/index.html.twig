@@ -280,8 +280,6 @@
 
         {#</div>#}
 
-
-
         <div class="modal fade" id="enterpriseModal" tabindex="-1" role="dialog" aria-labelledby="enterpriseModalLabel" aria-hidden="true">
 
             <div class="modal-dialog modal-dialog-centered modal-lg " role="document">
@@ -330,7 +328,7 @@
                                 <input type="text" class="form-control" id="city1" placeholder="Ville de résidence" v-model="new_enterprise.city" required>
                             </div>
 
-                            <h5>Choisissez le type de licence</h5>
+                            <h5 class="give_space">Choisissez le type de licence</h5>
 
                             <div class="form-group">
                                 <div class="radio">
@@ -359,6 +357,29 @@
                                         300000 FCFA valable 1 an
                                     </label>
                                 </div>
+                            </div>
+
+                            <div class="form-group give_space">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="check_mobile_money_enterprise" v-model="check_mobile_money_enterprise">
+                                        Payer par Flooz/T-money ?
+                                    </label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="checkbox"  >
+                                    <label>
+                                        <input type="checkbox" id="check_card_enterprise" v-model="!check_mobile_money_enterprise" >
+                                        Payer par Carte Visa/mastercard ?
+                                    </label>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <h4 v-show="check_mobile_money_enterprise" class="give_space">Veuillez entrer le numéro sur lequel se fera la transaction</h4>
+                            <div class="form-group" v-show="check_mobile_money_enterprise">
+                                <label for="enterprise_transaction_phone_number" class="control-label">*Numéro Flooz ou T-money</label>
+                                <input type="text" class="form-control" id="enterprise_transaction_phone_number" placeholder="Numéro Flooz/ Tmoney" v-model="new_enterprise.transaction_phone_number" required>
                             </div>
 
                             <div class="form-group">
@@ -422,7 +443,7 @@
                                 <input type="text" class="form-control" id="city" placeholder="Ville de résidence" v-model="new_academic.city" required>
                             </div>
 
-                            <h5>Choisissez le type de licence</h5>
+                            <h5 class="give_space">Choisissez le type de licence</h5>
 
                             <div class="form-group">
                                 <div class="radio">
@@ -431,6 +452,8 @@
                                         25000 FCFA valable 1 mois
                                     </label>
                                 </div>
+                            </div>
+                            <div>
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="licence_academic" id="academic4"  required>
@@ -438,13 +461,15 @@
                                     </label>
                                 </div>
                             </div>
-                            <div>
+                            <div class="form-group">
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="licence_academic" id="academic5"  required>
                                         130000 FCFA valable 6 mois
                                     </label>
                                 </div>
+                            </div>
+                            <div class="form-group">
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="licence_academic" id="academic6"   required>
@@ -452,27 +477,28 @@
                                     </label>
                                 </div>
                             </div>
+
                             <div class="form-group give_space">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" id="check_mobile_money" checked>
+                                        <input type="checkbox" id="check_mobile_money_academic" v-model="check_mobile_money_academic">
                                         Payer par Flooz/T-money ?
                                     </label>
                                     <div class="help-block with-errors"></div>
                                 </div>
-                                <div class="checkbox" >
+                                <div class="checkbox"  >
                                     <label>
-                                        <input type="checkbox" id="check_card" >
+                                        <input type="checkbox" id="check_card_academic" v-model="!check_mobile_money_academic" >
                                         Payer par Carte Visa/mastercard ?
                                     </label>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
 
-                            <h4>Donnez le numéro sur lequel se fera la transaction</h4>
-                            <div class="form-group">
-                                <label for="transaction_phone_number" class="control-label">*Numéro Flooz ou T-money</label>
-                                <input type="text" class="form-control" id="transaction_phone_number" placeholder="Numéro Flooz/ Tmoney" v-model="new_academic.transaction_phone_number" required>
+                            <h4 v-show="check_mobile_money_academic" class="give_space">Veuillez entrer le numéro sur lequel se fera la transaction</h4>
+                            <div class="form-group" v-show="check_mobile_money_academic">
+                                <label for="academic_transaction_phone_number" class="control-label">*Numéro Flooz ou T-money</label>
+                                <input type="text" class="form-control" id="academic_transaction_phone_number" placeholder="Numéro Flooz/ Tmoney" v-model="new_academic.transaction_phone_number" required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary">Valider</button>
@@ -535,7 +561,7 @@
                                 <input type="text" class="form-control" id="city3" placeholder="Ville de résidence" v-model="new_student.city" required>
                             </div>
 
-                            <h5>Choisissez le type de licence</h5>
+                            <h5 class="give_space">Choisissez le type de licence</h5>
 
                             <div class="form-group">
                                 <div class="radio">
@@ -544,6 +570,8 @@
                                         1000 FCFA valable 1 journée
                                     </label>
                                 </div>
+                            </div>
+                            <div class="form-group">
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="licence_student" id="student2" >
@@ -551,7 +579,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div>
+                            <div class="form-group">
                                 <div class="radio">
                                     <label>
                                         <input type="radio" name="licence_student" id="student3" >
@@ -559,35 +587,33 @@
                                     </label>
                                 </div>
                             </div>
+
                             <div class="form-group give_space">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" id="check_mobile_money" checked>
+                                        <input type="checkbox" id="check_mobile_money_student" v-model="check_mobile_money_student">
                                         Payer par Flooz/T-money ?
                                     </label>
                                     <div class="help-block with-errors"></div>
                                 </div>
-                                <div class="checkbox" >
+                                <div class="checkbox"  >
                                     <label>
-                                        <input type="checkbox" id="check_card" >
+                                        <input type="checkbox" id="check_card_student" v-model="!check_mobile_money_student" >
                                         Payer par Carte Visa/mastercard ?
                                     </label>
                                     <div class="help-block with-errors"></div>
                                 </div>
                             </div>
 
-                            <div>
-                                <h4>Donnez le numéro sur lequel se fera la transaction</h4>
-                                <div class="form-group">
-                                    <label for="transaction_phone_number3" class="control-label">*Numéro Flooz ou T-money</label>
-                                    <input type="text" class="form-control" id="transaction_phone_number3" placeholder="Numéro Flooz/ Tmoney" v-model="new_student.transaction_phone_number" required>
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Valider</button>
-                                </div>
+                            <h4 v-show="check_mobile_money_student" class="give_space">Veuillez entrer le numéro sur lequel se fera la transaction</h4>
+                            <div class="form-group" v-show="check_mobile_money_student">
+                                <label for="student_transaction_phone_number" class="control-label">*Numéro Flooz ou T-money</label>
+                                <input type="text" class="form-control" id="student_transaction_phone_number" placeholder="Numéro Flooz/ Tmoney" v-model="new_student.transaction_phone_number" required>
                             </div>
 
-
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Valider</button>
+                            </div>
                         </form>
 
                     </div>

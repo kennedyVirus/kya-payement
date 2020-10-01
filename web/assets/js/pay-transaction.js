@@ -46,7 +46,9 @@ window.onload = function () {
             },
             recover_email:'',
             recover_transaction_ref:'',
-            check_mobile_money:false
+            check_mobile_money_student:true,
+            check_mobile_money_academic:true,
+            check_mobile_money_enterprise:true
         },
 
         mounted: function () {

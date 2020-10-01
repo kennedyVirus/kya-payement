@@ -498,7 +498,7 @@ class BaseController extends Controller
             ])
             ->setBody(
                 $this->renderView(
-                    'TransactionBundle:Default:mail.html.twig',
+                    'TransactionApiBundle:Default:mail.html.twig',
                     array('code' => $body)
                 )
             )
