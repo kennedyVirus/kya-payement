@@ -83,6 +83,7 @@ window.onload = function () {
 
         methods : {
 
+
             openPay1Modal(){
                 this.check_mobile_money_academic=true
                 this.check_mobile_money_enterprise=true

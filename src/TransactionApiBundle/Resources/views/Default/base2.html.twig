@@ -78,7 +78,7 @@
         </nav><!-- .nav-menu -->
 
         {#<a href="{{ asset('assets/file/software.exe') }}" class="get-started-btn scrollto" download>Telechargez Gratuitement ici</a>#}
-        <a href="#" class="get-started-btn scrollto">Telechargez Gratuitement ici</a>
+        <a  class="get-started-btn scrollto" id="showAl2">Telechargez Gratuitement ici</a>
 
     </div>
 </header><!-- End Header -->
@@ -94,7 +94,7 @@
         </div>
         <div class="text-center">
             {#<a href="{{ asset('assets/file/software.exe') }}" class="btn-get-started scrollto" download>Telechargez Gratuitement ici</a>#}
-            <a href="#" class="btn-get-started scrollto">Telechargez Gratuitement ici</a>
+            <a  class="btn-get-started scrollto" id="showAl1">Telechargez Gratuitement ici</a>
         </div>
 
     </div>
@@ -161,7 +161,25 @@
 {#<script type="text/javascript"  src="{{ asset('assets/js/buefy.min.js') }}"></script>#}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.js" integrity="sha256-Pqs5A9wApIiYSB4hUcVldLk59gXaGnttbDmxVjRm6zQ=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/materialize-stepper@3.1.0/dist/js/mstepper.min.js"></script>
+<script type="text/javascript">
+    $("#showAl1").click(function(){
+        Swal.fire({
+            title: 'KYA-SolDesign!',
+            text: "Le logiciel sera disponible dans quelques heures.Réessayez plus tard.Merci",
+            icon: 'success',
+            confirmButtonText: 'J\'ai compris'
+        })
+    });
 
+    $("#showAl2").click(function(){
+        Swal.fire({
+            title: 'KYA-SolDesign!',
+            text: "Le logiciel sera disponible dans quelques heures.Réessayez plus tard.Merci",
+            icon: 'success',
+            confirmButtonText: 'J\'ai compris'
+        })
+    });
+</script>
 
 
 </body>
