@@ -50,7 +50,6 @@ class TransactionController extends BaseController
         $data = json_decode($json_data,true);
         $url='';
 
-
         $amount=0;
 
         if(
@@ -59,8 +58,8 @@ class TransactionController extends BaseController
         ){
             $amount=$this->getAmountToPay($data["type"],$data["amount_category"]);
         }
-        $amount=5;
 
+        $amount=5;
         $paygate_token=BaseController::PAYGATE_AUTH_TOKEN;
         $paygate_transaction_url=BaseController::PAYGATE_TRANSACTION_URL;
 
@@ -68,10 +67,8 @@ class TransactionController extends BaseController
 
         if(!($saveTempClient['status'])){
             //return error
-
             return new Response($this->serialize($this->errorResponseBlob('client not found')));
         }
-
 
         $transaction=$this->initPaygateTransaction($saveTempClient['clientId'],$data['transaction_phone_number'],$amount,$data['type'],$data['amount_category']);
 
@@ -82,12 +79,10 @@ class TransactionController extends BaseController
             //t-money
             $url= "".$paygate_transaction_url.$paygate_token."&amount=".$amount."&description=".urlencode($description)."&identifier=".$identifier;
 
-
             return new Response($this->serialize($this->okResponseBlob([
                 "url" => $url,
                 "type" => 1
             ])));
-
         }
 
         if($transaction->getPaymentMode()==2){
@@ -170,12 +165,24 @@ class TransactionController extends BaseController
             $em->persist($key);
             $em->flush();
 
+            $client=$this->ClientRepo()->findOneBy([
+                'id'=>$transaction->getClientId()
+            ]);
+
+            $email='';
+            if($client !=null){
+                if($client->getEmail()!=null){
+                    $email=$client->getEmail();
+                }
+            }
+
             //save verification
 
             $verification=new Verification();
             $verification->setPhoneNumber($transaction->getUsername());
             $verification->setState(0);
             $verification->setCode($licence_key);
+            $verification->setEmail($email);
             $verification->setLicenceKeyId($key->getId());
             $verification->setTransactionCode("".$data["tx_reference"].$this->generateRandomNumber(4));
             $verification->setCreatedAt(strtotime(date('Y-m-d H:i:s')));
@@ -190,16 +197,23 @@ class TransactionController extends BaseController
 
             $result=$this->sendZedekaMessage("228".$transaction->getUsername(),$licence_key_to_send);
 
-            $request->getSession()->getFlashBag()->add('transaction_success', 'Transaction éffectuée avec succès');
+            $res=$this->sendLicenceCodeByEmail($email,$licence_key_to_send);
 
-            return $this->redirectToRoute('homepage');
+//            $request->getSession()->getFlashBag()->add('transaction_success', 'Transaction éffectuée avec succès');
+//
+//            return $this->redirectToRoute('homepage');
+
+            return new RedirectResponse("http://www.kya-pay.kya-energy.com");
 
 
-           // return new Response($this->serialize($this->okResponseBlob('Operation successful')));
+
+            // return new Response($this->serialize($this->okResponseBlob('Operation successful')));
         }else  {
-            $request->getSession()->getFlashBag()->add('transaction_error', 'Une erreur est survenue lors de la transaction');
+            return new RedirectResponse("http://www.kya-pay.kya-energy.com");
 
-            return $this->redirectToRoute('homepage');
+//            $request->getSession()->getFlashBag()->add('transaction_error', 'Une erreur est survenue lors de la transaction');
+//
+//            return $this->redirectToRoute('homepage');
 
             //return new Response($this->serialize($this->errorResponseBlob('Invalid parameters')));
         }

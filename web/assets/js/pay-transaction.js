@@ -83,6 +83,15 @@ window.onload = function () {
 
         methods : {
 
+            showAlert(){
+                Swal.fire({
+                    title: 'KYA-SolDesign!',
+                    text: "Le logiciel sera disponible dans quelques heures.Réessayez plus tard.Merci",
+                    icon: 'success',
+                    confirmButtonText: 'J\'ai compris'
+                })
+            },
+
             openPay1Modal(){
                 this.check_mobile_money_academic=true
                 this.check_mobile_money_enterprise=true
@@ -344,7 +353,7 @@ window.onload = function () {
                         this.is_card_check=false
                         $('#modal-loader').modal('show');
                         console.log(this.new_enterprise)
-                        axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paydunya/payment/init',this.new_enterprise)
+                        axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paygate/payment/init',this.new_enterprise)
                             .then((response)=>{
                                 $('#modal-loader').modal('hide');
 

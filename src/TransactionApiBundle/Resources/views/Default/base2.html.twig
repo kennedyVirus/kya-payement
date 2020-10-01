@@ -77,7 +77,8 @@
             </ul>
         </nav><!-- .nav-menu -->
 
-        <a href="{{ asset('assets/file/software.exe') }}" class="get-started-btn scrollto" download>Telechargez Gratuitement ici</a>
+        {#<a href="{{ asset('assets/file/software.exe') }}" class="get-started-btn scrollto" download>Telechargez Gratuitement ici</a>#}
+        <a @click="showAlert()" >Telechargez Gratuitement ici</a>
 
     </div>
 </header><!-- End Header -->
@@ -92,7 +93,8 @@
             </div>
         </div>
         <div class="text-center">
-            <a href="{{ asset('assets/file/software.exe') }}" class="btn-get-started scrollto" download>Telechargez Gratuitement ici</a>
+            {#<a href="{{ asset('assets/file/software.exe') }}" class="btn-get-started scrollto" download>Telechargez Gratuitement ici</a>#}
+            <a @click="showAlert()">Telechargez Gratuitement ici</a>
         </div>
 
     </div>

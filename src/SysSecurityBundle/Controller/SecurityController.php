@@ -213,7 +213,13 @@ class SecurityController extends BaseController
                     }
 
                     if( $client==null){
-                        return new Response($this->serialize($this->errorResponseBlob('User not found',300)));
+                        $client_2=$this->ClientRepo()->findOneBy([
+                            'phone_number'=>$data['phone_number']
+                        ]);
+                        if($client_2==null){
+                            return new Response($this->serialize($this->errorResponseBlob('User not found',300)));
+
+                        }
                     }
                     //licence key
                     $licence_key=$this->LicenceKeyRepo()->find($check_code_sent->getLicenceKeyId());
