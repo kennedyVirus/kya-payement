@@ -194,8 +194,9 @@ class TransactionController extends BaseController
             //send licence key
 
             $licence_key_to_send= "<%23>%20CLE%20ACTIVATION%20KYA%20SOL%20DESIGN%20: " .$licence_key;
+            $licence_key_to_send_by_mail= "CLE D'ACTIVATION DE KYA SOL DESIGN : " .$licence_key;
 
-            $result=$this->sendZedekaMessage("228".$transaction->getUsername(),$licence_key_to_send);
+            $result=$this->sendZedekaMessage("228".$transaction->getUsername(),$licence_key_to_send_by_mail);
 
             $res=$this->sendLicenceCodeByEmail($email,$licence_key_to_send);
 
