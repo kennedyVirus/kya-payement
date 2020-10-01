@@ -48,10 +48,35 @@ window.onload = function () {
             recover_transaction_ref:'',
             check_mobile_money_student:true,
             check_mobile_money_academic:true,
-            check_mobile_money_enterprise:true
+            check_mobile_money_enterprise:true,
+            is_card_check:false
         },
 
         mounted: function () {
+
+            $('#check_card_academic').click(function () {
+                if ($("#check_card_academic").is(':checked')){
+                   this.check_mobile_money_academic=false
+                }else {
+                    this.check_mobile_money_academic=true
+                }
+            })
+            $('#check_card_student').click(function () {
+                if ($("#check_card_student").is(':checked')){
+                    this.check_mobile_money_student=false
+                }else {
+                    this.check_mobile_money_student=true
+                }
+            })
+
+            $('#check_card_enterprise').click(function () {
+                if ($("#check_card_enterprise").is(':checked')){
+                    this.check_mobile_money_enterprise=false
+                }else {
+                    this.check_mobile_money_enterprise=true
+                }
+            })
+
 
         },
 
@@ -59,12 +84,28 @@ window.onload = function () {
         methods : {
 
             openPay1Modal(){
+                this.check_mobile_money_academic=true
+                this.check_mobile_money_enterprise=true
+                this.check_mobile_money_student=true
+                this.is_card_check=false
+
                 $('#enterpriseModal').modal('show')
+
             },
             openPay2Modal(){
+                this.check_mobile_money_academic=true
+                this.check_mobile_money_enterprise=true
+                this.check_mobile_money_student=true
+                this.is_card_check=false
+
                 $('#academicModal').modal('show')
             },
             openPay3Modal(){
+                this.check_mobile_money_academic=true
+                this.check_mobile_money_enterprise=true
+                this.check_mobile_money_student=true
+                this.is_card_check=false
+
                 $('#studentModal').modal('show')
             },
             // openRecoverModal(){
@@ -153,46 +194,60 @@ window.onload = function () {
                 if (checked === true) {
                     this.new_academic.amount_category=selected
 
-                   // $('#modal-loader').modal('show');
-                    console.log(this.new_academic)
-                    axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paygate/payment/init',this.new_academic)
-                        .then((response)=>{
-                            $('#modal-loader').modal('hide');
+                    if(this.check_mobile_money_academic){
+                        this.is_card_check=false
 
-                            $('#academicModal').modal('hide')
+                        // $('#modal-loader').modal('show');
+                        console.log(this.new_academic)
+                        axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paygate/payment/init',this.new_academic)
+                            .then((response)=>{
+                                $('#modal-loader').modal('hide');
 
-                            console.log(response.data)
-                            if(response.data.error===0){
-                                if(response.data.data.type===1){
+                                $('#academicModal').modal('hide')
+
+                                console.log(response.data)
+                                if(response.data.error===0){
+                                    if(response.data.data.type===1){
+                                        Swal.fire({
+                                            title: 'Confirmation!',
+                                            text: "Vous serez redirigé vers un site marchand pour continuer l'opération",
+                                            icon: 'warning',
+                                            confirmButtonText: 'Continuer'
+                                        }).then((result) => {
+                                            if (result.value) {
+                                                window.location.href = response.data.data.url
+                                            }
+                                        })}
+                                    else {
+                                        Swal.fire({
+                                            title: 'Confirmation!',
+                                            text: "Veuillez consulter votre messagerie pour continuer l'opération",
+                                            icon: 'warning',
+                                            confirmButtonText: 'OK'
+                                        })
+                                    }
+                                }else{
                                     Swal.fire({
-                                        title: 'Confirmation!',
-                                        text: "Vous serez redirigé vers un site marchand pour continuer l'opération",
-                                        icon: 'warning',
-                                        confirmButtonText: 'Continuer'
-                                    }).then((result) => {
-                                        if (result.value) {
-                                            window.location.href = response.data.data.url
-                                        }
-                                    })}
-                                else {
-                                    Swal.fire({
-                                        title: 'Confirmation!',
-                                        text: "Veuillez consulter votre messagerie pour continuer l'opération",
-                                        icon: 'warning',
+                                        title: 'Error!',
+                                        text: 'Oups.Une erreur est survenue , réssayez svp',
+                                        icon: 'error',
                                         confirmButtonText: 'OK'
                                     })
                                 }
-                            }else{
-                                Swal.fire({
-                                    title: 'Error!',
-                                    text: 'Oups.Une erreur est survenue , réssayez svp',
-                                    icon: 'error',
-                                    confirmButtonText: 'OK'
-                                })
-                            }
-                        }).catch((error)=>{
-                        console.log(error)
-                    })
+                            }).catch((error)=>{
+                            console.log(error)
+                        })
+                    }else {
+                        this.is_card_check=true
+
+                        Swal.fire({
+                            title: 'Erreur Transaction!',
+                            text: 'Une erreur est survenue lors de la transaction.Veuillez réssayez plus tard svp',
+                            icon: 'error',
+                            confirmButtonText: 'J\'ai compris'
+                        })
+                    }
+
                 }
             },
             submitStudentForm(){
@@ -213,46 +268,58 @@ window.onload = function () {
                 if (checked === true) {
                     this.new_student.amount_category=selected
 
-                    $('#modal-loader').modal('show');
-                    console.log(this.new_student)
-                    axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paygate/payment/init',this.new_student)
-                        .then((response)=>{
-                            $('#modal-loader').modal('hide');
+                    if(this.check_mobile_money_student){
+                        this.is_card_check=false
 
-                            $('#studentModal').modal('hide')
+                        $('#modal-loader').modal('show');
+                        console.log(this.new_student)
+                        axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paygate/payment/init',this.new_student)
+                            .then((response)=>{
+                                $('#modal-loader').modal('hide');
 
-                            console.log(response.data)
-                            if(response.data.error===0){
-                                if(response.data.data.type===1){
+                                $('#studentModal').modal('hide')
+
+                                console.log(response.data)
+                                if(response.data.error===0){
+                                    if(response.data.data.type===1){
+                                        Swal.fire({
+                                            title: 'Confirmation!',
+                                            text: "Vous serez redirigé vers un site marchand pour continuer l'opération",
+                                            icon: 'warning',
+                                            confirmButtonText: 'Continuer'
+                                        }).then((result) => {
+                                            if (result.value) {
+                                                window.location.href = response.data.data.url
+                                            }
+                                        })}
+                                    else {
+                                        Swal.fire({
+                                            title: 'Confirmation!',
+                                            text: "Veuillez consulter votre messagerie pour continuer l'opération",
+                                            icon: 'warning',
+                                            confirmButtonText: 'OK'
+                                        })
+                                    }
+                                }else{
                                     Swal.fire({
-                                        title: 'Confirmation!',
-                                        text: "Vous serez redirigé vers un site marchand pour continuer l'opération",
-                                        icon: 'warning',
-                                        confirmButtonText: 'Continuer'
-                                    }).then((result) => {
-                                        if (result.value) {
-                                            window.location.href = response.data.data.url
-                                        }
-                                    })}
-                                else {
-                                    Swal.fire({
-                                        title: 'Confirmation!',
-                                        text: "Veuillez consulter votre messagerie pour continuer l'opération",
-                                        icon: 'warning',
+                                        title: 'Error!',
+                                        text: 'Oups.Une erreur est survenue , réssayez svp',
+                                        icon: 'error',
                                         confirmButtonText: 'OK'
                                     })
                                 }
-                            }else{
-                                Swal.fire({
-                                    title: 'Error!',
-                                    text: 'Oups.Une erreur est survenue , réssayez svp',
-                                    icon: 'error',
-                                    confirmButtonText: 'OK'
-                                })
-                            }
-                        }).catch((error)=>{
-                        console.log(error)
-                    })
+                            }).catch((error)=>{
+                            console.log(error)
+                        })
+                    }else {
+                        this.is_card_check=true
+                        Swal.fire({
+                            title: 'Erreur Transaction!',
+                            text: 'Une erreur est survenue lors de la transaction.Veuillez réssayez plus tard svp',
+                            icon: 'error',
+                            confirmButtonText: 'J\'ai compris'
+                        })
+                    }
                 }
             },
             submitEnterpriseForm(){
@@ -273,16 +340,18 @@ window.onload = function () {
                 if (checked === true) {
                     this.new_enterprise.amount_category=selected
 
-                    $('#modal-loader').modal('show');
-                    console.log(this.new_enterprise)
-                    axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paydunya/payment/init',this.new_enterprise)
-                        .then((response)=>{
-                            $('#modal-loader').modal('hide');
+                    if(this.check_mobile_money_enterprise){
+                        this.is_card_check=false
+                        $('#modal-loader').modal('show');
+                        console.log(this.new_enterprise)
+                        axios.post('/8004064b17546e4380ce83d1be75b50dkfj2015/api/kya/paydunya/payment/init',this.new_enterprise)
+                            .then((response)=>{
+                                $('#modal-loader').modal('hide');
 
-                            $('#enterpriseModal').modal('hide')
+                                $('#enterpriseModal').modal('hide')
 
-                            console.log(response.data)
-                            if(response.data.error===0){
+                                console.log(response.data)
+                                if(response.data.error===0){
                                     Swal.fire({
                                         title: 'Confirmation!',
                                         text: "Vous serez redirigé vers un site marchand pour continuer l'opération",
@@ -293,17 +362,28 @@ window.onload = function () {
                                             window.location.href = response.data.data.url
                                         }
                                     })
-                            }else{
-                                Swal.fire({
-                                    title: 'Error!',
-                                    text: 'Oups.Une erreur est survenue , réssayez svp',
-                                    icon: 'error',
-                                    confirmButtonText: 'OK'
-                                })
-                            }
-                        }).catch((error)=>{
-                        console.log(error)
-                    })
+                                }else{
+                                    Swal.fire({
+                                        title: 'Error!',
+                                        text: 'Oups.Une erreur est survenue , réssayez svp',
+                                        icon: 'error',
+                                        confirmButtonText: 'OK'
+                                    })
+                                }
+                            }).catch((error)=>{
+                            console.log(error)
+                        })
+                    }else {
+                        this.is_card_check=true
+                        Swal.fire({
+                            title: 'Erreur Transaction!',
+                            text: 'Une erreur est survenue lors de la transaction.Veuillez réssayez plus tard svp',
+                            icon: 'error',
+                            confirmButtonText: 'J\'ai compris'
+                        })
+                    }
+
+
                 }
             },
 
